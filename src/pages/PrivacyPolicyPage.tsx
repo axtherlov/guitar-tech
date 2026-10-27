@@ -27,7 +27,7 @@ export const PrivacyPolicyPage: React.FC = () => {
 
       {/* Header */}
       <div>
-        <h1 className="text-3xl font-extrabold text-zinc-100 tracking-tight mb-2">
+        <h1 className="text-3xl font-extrabold text-silver tracking-tight mb-2">
           {language === 'es' ? 'Política de Privacidad' : 'Privacy Policy'}
         </h1>
         <p className="text-xs text-zinc-400">
@@ -57,8 +57,8 @@ export const PrivacyPolicyPage: React.FC = () => {
           </h2>
           <p className="text-zinc-400">
             {language === 'es'
-              ? `El responsable del tratamiento de los datos recabados para la gestión de solicitudes técnicas es el titular de ${content.brandName}, con ámbito de actuación en Córdoba (Andalucía, España). Puede contactar directamente a través del canal oficial de WhatsApp del taller.`
-              : `The data controller for technical inquiries is the owner of ${content.brandName}, operating in Córdoba (Andalusia, Spain). Contact is conducted directly via the official workshop WhatsApp channel.`}
+              ? `El responsable del tratamiento de los datos recabados para la gestión de solicitudes técnicas es el titular de ${content.brandName}, con ámbito de actuación en Córdoba (España). Puede contactar directamente a través del canal oficial de WhatsApp del taller.`
+              : `The data controller for technical inquiries is the owner of ${content.brandName}, operating in Córdoba (Spain). Contact is conducted directly via the official workshop WhatsApp channel.`}
           </p>
         </section>
 

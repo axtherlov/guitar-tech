@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { useContent } from '../context/ContentContext.tsx';
-import { MessageSquare, Camera, ArrowRight, AlertCircle, ShieldCheck } from 'lucide-react';
+import { Camera, ArrowRight, AlertCircle, ShieldCheck } from 'lucide-react';
+import { WhatsAppIcon } from './WhatsAppIcon.tsx';
 
 interface FormState {
   name: string;
-  phone: string;
   instrumentType: string;
   brandModel: string;
   description: string;
@@ -13,7 +13,6 @@ interface FormState {
 
 interface FormErrors {
   name?: string;
-  phone?: string;
   instrumentType?: string;
   brandModel?: string;
   description?: string;
@@ -25,7 +24,6 @@ export const QuoteForm: React.FC = () => {
 
   const [formData, setFormData] = useState<FormState>({
     name: '',
-    phone: '',
     instrumentType: '',
     brandModel: '',
     description: '',
@@ -39,16 +37,12 @@ export const QuoteForm: React.FC = () => {
     'Guitarra Eléctrica',
     'Guitarra Acústica / Electroacústica',
     'Bajo Eléctrico (4/5 cuerdas)',
-    'Guitarra Clásica / Flamenca',
-    'Guitarra 7 / 8 Cuerdas',
-    'Bajo Acústico / Otro'
+    'Guitarra 7 / 8 Cuerdas'
   ] : [
     'Electric Guitar',
     'Acoustic / Electro-acoustic Guitar',
     'Electric Bass (4/5 strings)',
-    'Classical / Spanish Guitar',
-    '7 / 8 String Guitar',
-    'Acoustic Bass / Other'
+    '7 / 8 String Guitar'
   ];
 
   const validate = (): boolean => {
@@ -56,12 +50,6 @@ export const QuoteForm: React.FC = () => {
 
     if (!formData.name.trim()) {
       newErrors.name = language === 'es' ? 'Por favor, introduce tu nombre' : 'Please enter your name';
-    }
-
-    if (!formData.phone.trim()) {
-      newErrors.phone = language === 'es' ? 'Introduce tu teléfono o número de WhatsApp' : 'Please enter your phone or WhatsApp number';
-    } else if (formData.phone.replace(/[^0-9]/g, '').length < 6) {
-      newErrors.phone = language === 'es' ? 'Introduce un número de teléfono válido' : 'Please enter a valid phone number';
     }
 
     if (!formData.instrumentType) {
@@ -99,7 +87,6 @@ export const QuoteForm: React.FC = () => {
     if (language === 'es') {
       message = `*SOLICITUD DE PRESUPUESTO — GUITAR TECH CÓRDOBA*\n` +
         `• *Nombre:* ${formData.name.trim()}\n` +
-        `• *Teléfono/WhatsApp:* ${formData.phone.trim()}\n` +
         `• *Tipo de instrumento:* ${formData.instrumentType}\n` +
         `• *Marca y modelo:* ${formData.brandModel.trim()}\n\n` +
         `*Descripción del problema o trabajo requerido:*\n` +
@@ -108,7 +95,6 @@ export const QuoteForm: React.FC = () => {
     } else {
       message = `*QUOTE REQUEST — GUITAR TECH CÓRDOBA*\n` +
         `• *Name:* ${formData.name.trim()}\n` +
-        `• *Phone/WhatsApp:* ${formData.phone.trim()}\n` +
         `• *Instrument type:* ${formData.instrumentType}\n` +
         `• *Brand & Model:* ${formData.brandModel.trim()}\n\n` +
         `*Description of issue or requested service:*\n` +
@@ -128,7 +114,7 @@ export const QuoteForm: React.FC = () => {
   };
 
   return (
-    <div className="bg-zinc-900/90 border border-zinc-800 rounded-xl p-6 sm:p-8 max-w-2xl mx-auto shadow-xl">
+    <div className="bg-zinc-900/90 border border-zinc-800 rounded-xl p-6 sm:p-8 max-w-2xl mx-auto shadow-xl transition-all duration-300 hover:bg-gradient-to-br hover:from-blue-900/40 hover:to-bg-base hover:border-blue-700/60">
       <div className="mb-6">
         <h3 className="text-xl font-bold text-zinc-100 tracking-tight">
           {language === 'es' ? 'Solicitar presupuesto personalizado' : 'Request a personalized quote'}
@@ -142,61 +128,32 @@ export const QuoteForm: React.FC = () => {
 
       <form onSubmit={handleSubmit} noValidate className="space-y-5">
         
-        {/* Name & Phone in 2 cols */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div>
-            <label htmlFor="quote-name" className="block text-xs font-semibold text-zinc-300 mb-1.5">
-              {language === 'es' ? 'Tu nombre *' : 'Your name *'}
-            </label>
-            <input
-              id="quote-name"
-              type="text"
-              value={formData.name}
-              onChange={(e) => {
-                setFormData({ ...formData, name: e.target.value });
-                if (errors.name) setErrors({ ...errors, name: undefined });
-              }}
-              placeholder={language === 'es' ? 'ej. Javier Moreno' : 'e.g. Alex Miller'}
-              className={`w-full px-3.5 py-2.5 bg-zinc-950 border rounded-lg text-sm text-zinc-100 placeholder-zinc-600 focus:outline-none focus:ring-1 transition-all ${
-                errors.name
-                  ? 'border-red-500 focus:ring-red-500'
-                  : 'border-zinc-800 focus:border-amber-400 focus:ring-amber-400/50'
-              }`}
-            />
-            {errors.name && (
-              <p className="mt-1 text-xs text-red-400 flex items-center gap-1">
-                <AlertCircle className="w-3 h-3" />
-                <span>{errors.name}</span>
-              </p>
-            )}
-          </div>
-
-          <div>
-            <label htmlFor="quote-phone" className="block text-xs font-semibold text-zinc-300 mb-1.5">
-              {language === 'es' ? 'Teléfono / WhatsApp *' : 'Phone / WhatsApp *'}
-            </label>
-            <input
-              id="quote-phone"
-              type="tel"
-              value={formData.phone}
-              onChange={(e) => {
-                setFormData({ ...formData, phone: e.target.value });
-                if (errors.phone) setErrors({ ...errors, phone: undefined });
-              }}
-              placeholder={language === 'es' ? '+34 600 000 000' : '+34 600 000 000'}
-              className={`w-full px-3.5 py-2.5 bg-zinc-950 border rounded-lg text-sm text-zinc-100 placeholder-zinc-600 focus:outline-none focus:ring-1 transition-all ${
-                errors.phone
-                  ? 'border-red-500 focus:ring-red-500'
-                  : 'border-zinc-800 focus:border-amber-400 focus:ring-amber-400/50'
-              }`}
-            />
-            {errors.phone && (
-              <p className="mt-1 text-xs text-red-400 flex items-center gap-1">
-                <AlertCircle className="w-3 h-3" />
-                <span>{errors.phone}</span>
-              </p>
-            )}
-          </div>
+        {/* Name */}
+        <div>
+          <label htmlFor="quote-name" className="block text-xs font-semibold text-zinc-300 mb-1.5">
+            {language === 'es' ? 'Tu nombre *' : 'Your name *'}
+          </label>
+          <input
+            id="quote-name"
+            type="text"
+            value={formData.name}
+            onChange={(e) => {
+              setFormData({ ...formData, name: e.target.value });
+              if (errors.name) setErrors({ ...errors, name: undefined });
+            }}
+            placeholder={language === 'es' ? 'ej. Javier Moreno' : 'e.g. Alex Miller'}
+            className={`w-full px-3.5 py-2.5 bg-zinc-950 border rounded-lg text-sm text-zinc-100 placeholder-zinc-600 focus:outline-none focus:ring-1 transition-all ${
+              errors.name
+                ? 'border-red-500 focus:ring-red-500'
+                : 'border-zinc-800 focus:border-amber-400 focus:ring-amber-400/50'
+            }`}
+          />
+          {errors.name && (
+            <p className="mt-1 text-xs text-red-400 flex items-center gap-1">
+              <AlertCircle className="w-3 h-3" />
+              <span>{errors.name}</span>
+            </p>
+          )}
         </div>
 
         {/* Instrument Type */}
@@ -361,7 +318,7 @@ export const QuoteForm: React.FC = () => {
             disabled={isSubmitting}
             className="w-full flex items-center justify-center gap-2.5 px-6 py-3.5 bg-[#25D366] hover:bg-[#20bd5a] active:scale-[0.99] text-zinc-950 font-bold text-sm uppercase tracking-wider rounded-xl transition-all shadow-md hover:shadow-[#25D366]/20 focus:outline-none focus:ring-2 focus:ring-[#25D366] focus:ring-offset-2 focus:ring-offset-zinc-900"
           >
-            <MessageSquare className="w-4 h-4 fill-current" />
+            <WhatsAppIcon className="w-4 h-4 fill-current" />
             <span>
               {isSubmitting
                 ? (language === 'es' ? 'Preparando mensaje...' : 'Preparing message...')

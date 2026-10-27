@@ -1,71 +1,64 @@
 import React from 'react';
 import { useContent } from '../context/ContentContext.tsx';
 import { QuoteForm } from '../components/QuoteForm.tsx';
-import { MessageSquare, MapPin, Wrench, Clock, ShieldCheck, Check } from 'lucide-react';
+import { MapPin, ExternalLink } from 'lucide-react';
+import { WhatsAppIcon } from '../components/WhatsAppIcon.tsx';
+
+// Placeholder workshop address; replace with the final one when it is confirmed.
+const WORKSHOP_ADDRESS = 'Maestro Priego López 43, Córdoba, España';
+const MAP_QUERY = encodeURIComponent(WORKSHOP_ADDRESS);
+const MAPS_URL = `https://www.google.com/maps/search/?api=1&query=${MAP_QUERY}`;
+const MAPS_EMBED_URL = `https://maps.google.com/maps?q=${MAP_QUERY}&z=16&output=embed`;
 
 export const ContactPage: React.FC = () => {
   const { content, language, openWhatsApp } = useContent();
 
   return (
-    <div className="space-y-16">
-      
-      {/* Header */}
-      <div className="max-w-3xl">
-        <div className="text-xs font-semibold text-amber-400 uppercase tracking-widest mb-2">
-          {language === 'es' ? 'Contacto y Citas' : 'Contact & Inquiries'}
-        </div>
-        <h1 className="text-3xl sm:text-4xl font-extrabold text-zinc-100 tracking-tight mb-4">
-          {language === 'es'
-            ? 'Cuéntame qué necesita tu guitarra o bajo'
-            : 'Tell me what your guitar or bass needs'}
-        </h1>
-        <p className="text-sm sm:text-base text-zinc-400 leading-relaxed">
-          {language === 'es'
-            ? 'Todas las consultas y presupuestos se gestionan de forma directa y personalizada a través de WhatsApp. Puedes usar el formulario guiado a continuación para detallar tu instrumento o escribir directamente.'
-            : 'All inquiries and quotes are handled directly and personally via WhatsApp. You can use the guided form below to specify your instrument details or message directly.'}
-        </p>
-      </div>
+    <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
 
-      {/* Prominent Direct WhatsApp Action Banner */}
-      <div className="bg-gradient-to-r from-zinc-900 via-zinc-900 to-zinc-900/80 border border-zinc-800 rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-lg">
-        <div className="space-y-1 text-center md:text-left">
-          <div className="text-xs font-semibold text-amber-400 uppercase tracking-wider flex items-center justify-center md:justify-start gap-1.5">
-            <MessageSquare className="w-4 h-4 fill-current" />
-            <span>{language === 'es' ? 'Canal de atención preferente' : 'Primary Contact Channel'}</span>
+      {/* Left: heading, WhatsApp channel and workshop card with map */}
+      <div className="lg:col-span-5 space-y-8">
+        <div>
+          <div className="text-xs font-semibold text-amber-400 uppercase tracking-widest mb-2">
+            {language === 'es' ? 'Contacto' : 'Contact'}
           </div>
-          <h2 className="text-lg sm:text-xl font-bold text-zinc-100">
-            {language === 'es' ? '¿Prefieres consultar directamente por WhatsApp?' : 'Prefer to chat directly on WhatsApp?'}
-          </h2>
-          <p className="text-xs text-zinc-400">
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-silver tracking-tight">
             {language === 'es'
-              ? 'Inicia una conversación directa para resolver dudas rápidas o coordinar una cita.'
-              : 'Start a direct chat to ask quick questions or schedule a drop-off.'}
-          </p>
+              ? 'Cuéntame qué necesita tu instrumento'
+              : 'Tell me what your instrument needs'}
+          </h1>
         </div>
 
-        <button
-          type="button"
-          onClick={() => openWhatsApp()}
-          className="w-full md:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 bg-[#25D366] hover:bg-[#20bd5a] text-zinc-950 font-bold text-xs uppercase tracking-wider rounded-xl transition-all shadow-md hover:shadow-[#25D366]/20 active:scale-[0.98] shrink-0"
-        >
-          <MessageSquare className="w-4 h-4 fill-current" />
-          <span>{language === 'es' ? 'Abrir chat de WhatsApp' : 'Open WhatsApp chat'}</span>
-        </button>
-      </div>
+        {/* Direct WhatsApp channel: text on the left, icon-only button on the right */}
+        <div className="bg-zinc-900 border border-zinc-800 rounded-2xl transition-all duration-300 hover:bg-gradient-to-br hover:from-blue-900/40 hover:to-bg-base hover:border-blue-700/60 p-6 flex items-center justify-between gap-5 shadow-lg">
+          <div className="space-y-2">
+            <div className="text-xs font-semibold text-amber-400 uppercase tracking-wider flex items-center gap-1.5">
+              <WhatsAppIcon className="w-4 h-4 fill-current" />
+              <span>{language === 'es' ? 'Canal de atención preferente' : 'Primary Contact Channel'}</span>
+            </div>
+            <h2 className="text-lg sm:text-xl font-bold text-zinc-100">
+              {language === 'es' ? '¿Prefieres consultar directamente por WhatsApp?' : 'Prefer to chat directly on WhatsApp?'}
+            </h2>
+            <p className="text-sm text-zinc-400 leading-relaxed">
+              {language === 'es'
+                ? 'Todas las consultas y presupuestos se gestionan de forma directa y personalizada a través de WhatsApp. Puedes usar el formulario guiado a continuación para detallar tu instrumento o escribir directamente.'
+                : 'All inquiries and quotes are handled directly and personally via WhatsApp. You can use the guided form below to specify your instrument details or message directly.'}
+            </p>
+          </div>
 
-      {/* Main Grid: Guided Quote Form (Left) + Workshop & Area Coverage (Right) */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-        
-        {/* Left: The Guided Form */}
-        <div className="lg:col-span-7">
-          <QuoteForm />
+          <button
+            type="button"
+            onClick={() => openWhatsApp()}
+            className="shrink-0 inline-flex items-center justify-center p-3 bg-[#25D366] hover:bg-[#20bd5a] text-zinc-950 rounded-xl transition-all shadow-md hover:shadow-[#25D366]/20 active:scale-[0.96] focus:outline-none focus:ring-2 focus:ring-[#25D366] focus:ring-offset-2 focus:ring-offset-zinc-900"
+            aria-label={language === 'es' ? 'Abrir chat de WhatsApp' : 'Open WhatsApp chat'}
+          >
+            <WhatsAppIcon className="w-6 h-6" />
+          </button>
         </div>
 
-        {/* Right: Coverage & Workshop Modalities */}
-        <div className="lg:col-span-5 space-y-6">
-          
-          {/* Workshop Intake Info */}
-          <div className="bg-zinc-900/60 border border-zinc-800 rounded-xl p-6 space-y-3">
+        {/* Workshop intake info with clickable map preview */}
+        <div className="bg-zinc-900/60 border border-zinc-800 rounded-xl overflow-hidden transition-all duration-300 hover:bg-gradient-to-br hover:from-blue-900/40 hover:to-bg-base hover:border-blue-700/60">
+          <div className="p-6 pb-4 space-y-3">
             <div className="flex items-center gap-2 text-zinc-100 font-bold text-sm">
               <MapPin className="w-4 h-4 text-amber-400" />
               <span>{language === 'es' ? 'Servicio en Taller (Córdoba)' : 'Workshop Service (Córdoba)'}</span>
@@ -73,53 +66,36 @@ export const ContactPage: React.FC = () => {
             <p className="text-xs text-zinc-400 leading-relaxed">
               {content.coverage.workshopDescription[language]}
             </p>
-            <div className="pt-2 text-[11px] text-zinc-500 border-t border-zinc-800/80 flex items-center gap-1.5">
-              <Clock className="w-3.5 h-3.5 text-zinc-400" />
-              <span>
-                {language === 'es'
-                  ? 'Recepción y entrega exclusivamente con cita previa coordinada.'
-                  : 'Drop-off and pick-up strictly by appointment.'}
+          </div>
+
+          <div className="px-6 pb-6">
+            <a
+              href={MAPS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={language === 'es' ? `Abrir ${WORKSHOP_ADDRESS} en Google Maps` : `Open ${WORKSHOP_ADDRESS} in Google Maps`}
+              className="group relative block aspect-16/10 rounded-lg overflow-hidden border border-zinc-800 bg-zinc-950"
+            >
+              <iframe
+                src={MAPS_EMBED_URL}
+                title={language === 'es' ? 'Mapa de la ubicación del taller' : 'Workshop location map'}
+                className="absolute inset-0 h-full w-full border-0 pointer-events-none"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                tabIndex={-1}
+              />
+              <span className="absolute bottom-3 left-3 inline-flex items-center gap-1.5 rounded-lg bg-zinc-950/85 px-3 py-1.5 text-xs font-semibold text-amber-300 transition-colors group-hover:bg-zinc-950 group-hover:text-amber-200">
+                <span>{language === 'es' ? 'Abrir en Google Maps' : 'Open in Google Maps'}</span>
+                <ExternalLink className="w-3.5 h-3.5" />
               </span>
-            </div>
+            </a>
           </div>
-
-          {/* On-Site Bench Service */}
-          <div className="bg-zinc-900/60 border border-zinc-800 rounded-xl p-6 space-y-3">
-            <div className="flex items-center gap-2 text-zinc-100 font-bold text-sm">
-              <Wrench className="w-4 h-4 text-amber-400" />
-              <span>{language === 'es' ? 'Servicio Técnico Desplazado' : 'On-Site Technical Service'}</span>
-            </div>
-            <p className="text-xs text-zinc-400 leading-relaxed">
-              {content.coverage.onsiteDescription[language]}
-            </p>
-          </div>
-
-          {/* Service Area list */}
-          <div className="bg-zinc-900/60 border border-zinc-800 rounded-xl p-6 space-y-3">
-            <h3 className="text-xs font-semibold text-zinc-200 uppercase tracking-wider">
-              {language === 'es' ? 'Zonas y Cobertura' : 'Coverage & Locations'}
-            </h3>
-            <ul className="space-y-2 text-xs text-zinc-400">
-              {content.coverage.areasList[language].map((area, idx) => (
-                <li key={idx} className="flex items-start gap-2">
-                  <Check className="w-3.5 h-3.5 text-amber-400 shrink-0 mt-0.5" />
-                  <span>{area}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Notice on Shipping */}
-          <div className="p-4 bg-zinc-950/60 border border-zinc-800/80 rounded-xl text-xs text-zinc-500 leading-relaxed">
-            <p>
-              {language === 'es'
-                ? 'Nota: Por motivos de seguridad y calibración óptima, no se realizan envíos de paquetería de instrumentos fuera del área de servicio.'
-                : 'Note: For instrument safety and fine calibration preservation, shipping via parcel carriers outside the service area is not offered.'}
-            </p>
-          </div>
-
         </div>
+      </div>
 
+      {/* Right: guided quote form */}
+      <div className="lg:col-span-7">
+        <QuoteForm />
       </div>
 
     </div>

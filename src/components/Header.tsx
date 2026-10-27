@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useContent } from '../context/ContentContext.tsx';
-import { MessageSquare, Menu, X, ArrowUpRight } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 export const Header: React.FC = () => {
-  const { content, language, setLanguage, navigate, currentPath, openWhatsApp } = useContent();
+  const { content, language, setLanguage, navigate, currentPath } = useContent();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -55,7 +55,7 @@ export const Header: React.FC = () => {
         <a
           href={language === 'es' ? '/es' : '/en'}
           onClick={(e) => handleNavClick(language === 'es' ? '/es' : '/en', e)}
-          className="text-base sm:text-lg font-bold tracking-tight text-zinc-100 hover:text-amber-400 transition-colors whitespace-nowrap shrink-0 flex items-center gap-2"
+          className="text-xl sm:text-2xl font-bold tracking-tight text-zinc-100 hover:text-amber-400 transition-colors whitespace-nowrap shrink-0 flex items-center gap-2"
         >
           <span className="w-2.5 h-2.5 rounded-xs bg-amber-500 rotate-45 inline-block shrink-0" />
           <span className="truncate">{content.brandName}</span>
@@ -110,17 +110,6 @@ export const Header: React.FC = () => {
             </button>
           </div>
 
-          {/* Primary CTA button with WhatsApp Green (Requirement 8 & 9) */}
-          <button
-            type="button"
-            onClick={() => openWhatsApp()}
-            className="hidden sm:inline-flex items-center gap-2 px-4 py-2 text-xs font-bold uppercase tracking-wider text-zinc-950 bg-[#25D366] hover:bg-[#20bd5a] active:scale-[0.98] rounded-xl transition-all whitespace-nowrap shrink-0 shadow-sm hover:shadow-[#25D366]/20 focus:outline-none focus:ring-2 focus:ring-[#25D366] focus:ring-offset-2 focus:ring-offset-[#0b0d11]"
-          >
-            <MessageSquare className="w-3.5 h-3.5 fill-current" />
-            <span>WhatsApp</span>
-            <ArrowUpRight className="w-3.5 h-3.5 opacity-80" />
-          </button>
-
           {/* Mobile hamburger toggle */}
           <button
             type="button"
@@ -152,20 +141,6 @@ export const Header: React.FC = () => {
               </a>
             ))}
           </nav>
-
-          <div className="pt-3 border-t border-zinc-800/80">
-            <button
-              type="button"
-              onClick={() => {
-                setMobileMenuOpen(false);
-                openWhatsApp();
-              }}
-              className="w-full flex items-center justify-center gap-2 px-4 py-3 text-sm font-bold text-zinc-950 bg-[#25D366] hover:bg-[#20bd5a] rounded-xl transition-colors shadow-sm"
-            >
-              <MessageSquare className="w-4 h-4 fill-current" />
-              <span>{language === 'es' ? 'Consultar por WhatsApp' : 'Contact via WhatsApp'}</span>
-            </button>
-          </div>
         </div>
       )}
     </header>
