@@ -181,7 +181,7 @@
           "Hardware tightening: tuners, strap buttons, bridge screws and output jack."
         ]
       },
-      "image": "/src/assets/images/hero_guitar_workbench_1793042582513.jpg",
+      "image": "/images/hero_guitar_workbench_1793042582513.jpg",
       "imageAlt": {
         "es": "Calibración y ajuste fino de guitarra en banco de trabajo con galgas y reglas",
         "en": "Guitar setup and fine calibration on luthier workbench with feeler gauges"
@@ -229,7 +229,7 @@
           "Multimeter continuity testing and ground loop rectification."
         ]
       },
-      "image": "/src/assets/images/guitar_electronics_soldering_1793042584609.jpg",
+      "image": "/images/guitar_electronics_soldering_1793042584609.jpg",
       "imageAlt": {
         "es": "Soldadura de circuito de guitarra con potenciómetros y condensador de tono",
         "en": "Guitar electronics cavity soldering with potentiometers and tone capacitor"
@@ -277,7 +277,7 @@
           "Proof testing under full string tension and pitch calibration."
         ]
       },
-      "image": "/src/assets/images/service_repairs_structural_1793091764480.jpg",
+      "image": "/images/service_repairs_structural_1793091764480.jpg",
       "imageAlt": {
         "es": "Reparación estructural de mástil y cuerpo con sargentos de madera para luthería",
         "en": "Structural guitar neck and body repair using specialized luthier clamps"
@@ -323,7 +323,7 @@
           "Wiring custom circuits: Treble Bleeds, coil splits via push-pull pots or blend circuits."
         ]
       },
-      "image": "/src/assets/images/service_modifications_hardware_1793091764589.jpg",
+      "image": "/images/service_modifications_hardware_1793091764589.jpg",
       "imageAlt": {
         "es": "Instalación de puente de latón y clavijeros de bloqueo en guitarra eléctrica",
         "en": "Installing precision brass bridge and locking tuners on electric guitar"
@@ -371,7 +371,7 @@
           "Fret end dressing and deburring for silky smooth thumb transitions."
         ]
       },
-      "image": "/src/assets/images/fretwork_precision_luthier_1793042582589.jpg",
+      "image": "/images/fretwork_precision_luthier_1793042582589.jpg",
       "imageAlt": {
         "es": "Nivelado, coronado y pulido de trastes con abrasivos micro-mesh en diapasón",
         "en": "Fret leveling, recrowning and micro-mesh polishing on rosewood fretboard"
@@ -419,7 +419,7 @@
           "Subsequent leveling, precision crowning, high polish and full setup."
         ]
       },
-      "image": "/src/assets/images/service_refretting_workshop_1793091765400.jpg",
+      "image": "/images/service_refretting_workshop_1793091765400.jpg",
       "imageAlt": {
         "es": "Inserción y prensado de hilo de traste nuevo en diapasón de guitarra",
         "en": "Pressing new fret wire into guitar fretboard using brass radiused luthier press"
@@ -467,7 +467,7 @@
           "High-luster wax polish and hand buffing of body and headstock."
         ]
       },
-      "image": "/src/assets/images/service_maintenance_cleaning_1793091766041.jpg",
+      "image": "/images/service_maintenance_cleaning_1793091766041.jpg",
       "imageAlt": {
         "es": "Limpieza profunda e hidratación botánica de diapasón con paño de microfibra",
         "en": "Deep cleaning and organic oil conditioning of fretboard with microfiber cloth"
@@ -513,7 +513,7 @@
           "Prior feasibility assessment: heavy structural gluing or machine fretwork are strictly conducted in workshop."
         ]
       },
-      "image": "/src/assets/images/service_onsite_studio_tech_1793091766613.jpg",
+      "image": "/images/service_onsite_studio_tech_1793091766613.jpg",
       "imageAlt": {
         "es": "Puesto de trabajo técnico portátil en estudio de grabación musical",
         "en": "Portable mobile guitar tech workstation case in recording studio"
@@ -559,7 +559,7 @@
           "Priority turnaround scheduling for working musicians, gigging bands and academy teachers."
         ]
       },
-      "image": "/src/assets/images/service_professional_shop_b2b_1793091766755.jpg",
+      "image": "/images/service_professional_shop_b2b_1793091766755.jpg",
       "imageAlt": {
         "es": "Soporte y revisión técnica para guitarras y bajos en rack de exposición y taller",
         "en": "Technical support and multi-stand guitar inspection for music shops and pros"

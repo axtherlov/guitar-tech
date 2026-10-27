@@ -115,7 +115,7 @@ export const HomePage: React.FC = () => {
           <div className="lg:col-span-5 relative">
             <div className="group relative rounded-2xl overflow-hidden border border-zinc-800/90 shadow-2xl bg-zinc-900 aspect-16/10 sm:aspect-4/3 lg:aspect-square">
               <img
-                src="/src/assets/images/hero_guitar_workbench_1793042582513.jpg"
+                src="/images/hero_guitar_workbench_1793042582513.jpg"
                 alt={language === 'es' ? 'Guitarra eléctrica en banco de calibración con galgas y reglas rectificadas' : 'Electric guitar on precision luthier workbench undergoing calibration with gauges and straightedges'}
                 className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 loading="eager"
@@ -299,7 +299,7 @@ export const HomePage: React.FC = () => {
         <div className="lg:col-span-5 relative">
           <div className="group rounded-2xl overflow-hidden border border-zinc-800 shadow-xl bg-zinc-900 aspect-4/3">
             <img
-              src="/src/assets/images/technician_tools_workbench_1793042583573.jpg"
+              src="/images/technician_tools_workbench_1793042583573.jpg"
               alt="Taller de luthería y banco de calibración en Córdoba"
               className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
               loading="lazy"

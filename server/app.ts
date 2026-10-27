@@ -17,6 +17,17 @@ const DEFAULT_APP_URL = 'https://cuervoguitartech.com';
 
 export const isProd = () => process.env.NODE_ENV === 'production';
 
+// Images used to live in src/assets/images, which only exists under the Vite dev server.
+// They are now static files in public/images; rewrite legacy paths found in stored content/backups.
+const LEGACY_IMAGE_PREFIX = '/src/assets/images/';
+const IMAGE_PREFIX = '/images/';
+function migrateContent(content: SiteContent): SiteContent {
+  const raw = JSON.stringify(content);
+  return raw.includes(LEGACY_IMAGE_PREFIX)
+    ? JSON.parse(raw.split(LEGACY_IMAGE_PREFIX).join(IMAGE_PREFIX))
+    : content;
+}
+
 type Handler = (req: Request, res: Response) => Promise<void>;
 
 // Express 4 does not catch rejected promises from async handlers.
@@ -53,7 +64,7 @@ export function createApp(store: Store = createStore(DATA_DIR)) {
     try {
       const stored = await store.getContent();
       // Merge with defaults in case new fields were added
-      if (stored) return { ...DEFAULT_CONTENT, ...stored };
+      if (stored) return migrateContent({ ...DEFAULT_CONTENT, ...stored });
     } catch (err) {
       console.error('Error reading content, falling back to defaults:', err);
       return DEFAULT_CONTENT;

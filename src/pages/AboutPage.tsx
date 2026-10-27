@@ -41,7 +41,7 @@ export const AboutPage: React.FC = () => {
       {/* Hero Workshop Image */}
       <div className="rounded-2xl overflow-hidden border border-zinc-800 shadow-xl bg-zinc-950 aspect-21/9 max-h-96">
         <img
-          src="/src/assets/images/technician_tools_workbench_1793042583573.jpg"
+          src="/images/technician_tools_workbench_1793042583573.jpg"
           alt="Banco de trabajo con herramientas de luthería y guitarras en Córdoba"
           className="w-full h-full object-cover"
           loading="lazy"
