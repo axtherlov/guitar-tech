@@ -1,4 +1,4 @@
-# Guitar Tech Córdoba — Technical Guitar Services Website
+# Guitar Tech — Technical Guitar Services Website
 
 Sitio web profesional, bilingüe (ES | EN), orientado a producción y optimizado para SEO local para un técnico especialista en guitarras y bajos en Córdoba (Andalucía, España).
 
