@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useContent } from '../context/ContentContext.tsx';
+import { useContent, SessionExpiredError } from '../context/ContentContext.tsx';
 import { SiteContent, BackupItem, ServiceItem } from '../types.ts';
 import {
   Lock,
@@ -84,13 +84,24 @@ export const AdminPage: React.FC = () => {
     sessionStorage.removeItem('gt_admin_token');
   };
 
+  // Sessions last 1 hour server-side. Unsaved edits live in formData, which survives going back to login.
+  const expireSession = () => {
+    setToken(null);
+    sessionStorage.removeItem('gt_admin_token');
+    setLoginError('Tu sesión ha caducado. Vuelve a iniciar sesión: los cambios sin guardar se conservan.');
+  };
+
+  const isAuthError = (res: Response) => res.status === 401 || res.status === 403;
+
   const fetchBackups = async (authToken: string) => {
     setLoadingBackups(true);
     try {
       const res = await fetch('/api/backups', {
         headers: { 'Authorization': `Bearer ${authToken}` }
       });
-      if (res.ok) {
+      if (isAuthError(res)) {
+        expireSession();
+      } else if (res.ok) {
         const data = await res.json();
         setBackupsList(data.backups || []);
       }
@@ -115,6 +126,11 @@ export const AdminPage: React.FC = () => {
         throw new Error('Error al guardar en el servidor');
       }
     } catch (err: any) {
+      if (err instanceof SessionExpiredError) {
+        setSaveStatus('idle');
+        expireSession();
+        return;
+      }
       setSaveStatus('error');
       setSaveMessage(err.message || 'Ocurrió un error');
       setTimeout(() => setSaveStatus('idle'), 4000);
@@ -128,7 +144,9 @@ export const AdminPage: React.FC = () => {
         method: 'POST',
         headers: { 'Authorization': `Bearer ${token}` }
       });
-      if (res.ok) {
+      if (isAuthError(res)) {
+        expireSession();
+      } else if (res.ok) {
         fetchBackups(token);
         alert('Copia de seguridad manual creada con éxito.');
       }
@@ -151,7 +169,9 @@ export const AdminPage: React.FC = () => {
         },
         body: JSON.stringify({ filename })
       });
-      if (res.ok) {
+      if (isAuthError(res)) {
+        expireSession();
+      } else if (res.ok) {
         const data = await res.json();
         if (data.content) {
           setFormData(data.content);
@@ -192,9 +212,8 @@ export const AdminPage: React.FC = () => {
 
           {isDefaultPassword && (
             <div className="p-3.5 bg-zinc-950 border border-amber-500/30 rounded-lg text-xs text-amber-300/90 leading-relaxed">
-              <strong className="block text-amber-200 mb-1">Clave de acceso inicial:</strong>
-              Puedes acceder con la clave de configuración <code className="bg-zinc-800 px-1 py-0.5 rounded text-zinc-100 font-mono">admin</code> o <code className="bg-zinc-800 px-1 py-0.5 rounded text-zinc-100 font-mono">guitartech2026</code>.
-              Para producción, define <code className="text-zinc-100 font-mono">ADMIN_PASSWORD</code> en el archivo <code className="text-zinc-100 font-mono">.env</code>.
+              <strong className="block text-amber-200 mb-1">Contraseña de administrador sin configurar:</strong>
+              Define <code className="text-zinc-100 font-mono">ADMIN_PASSWORD</code> en el archivo <code className="text-zinc-100 font-mono">.env</code> (o en las variables de entorno del hosting). En producción el acceso queda deshabilitado hasta que lo hagas.
             </div>
           )}
 

@@ -1,4 +1,4 @@
-import { SiteContent } from '../types.ts';
+import type { SiteContent } from '../types.js';
 
 export const DEFAULT_CONTENT: SiteContent = {
   brandName: 'Guitar Tech Córdoba',

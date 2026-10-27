@@ -27,6 +27,14 @@ const ROUTE_MAP: Record<string, { es: string; en: string }> = {
   privacy: { es: '/es/politica-privacidad', en: '/en/privacy-policy' }
 };
 
+/** Thrown by updateContent when the server rejects the admin token (expired or revoked). */
+export class SessionExpiredError extends Error {
+  constructor() {
+    super('Admin session expired');
+    this.name = 'SessionExpiredError';
+  }
+}
+
 export const ContentProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [content, setContent] = useState<SiteContent>(DEFAULT_CONTENT);
   const [isDefaultPassword, setIsDefaultPassword] = useState<boolean>(true);
@@ -153,6 +161,9 @@ export const ContentProvider: React.FC<{ children: ReactNode }> = ({ children })
         },
         body: JSON.stringify(newContent)
       });
+      if (res.status === 401 || res.status === 403) {
+        throw new SessionExpiredError();
+      }
       if (!res.ok) {
         const err = await res.json();
         throw new Error(err.error || 'Failed to update content');
@@ -163,6 +174,7 @@ export const ContentProvider: React.FC<{ children: ReactNode }> = ({ children })
       }
       return true;
     } catch (err) {
+      if (err instanceof SessionExpiredError) throw err;
       console.error('Update content error:', err);
       return false;
     }
