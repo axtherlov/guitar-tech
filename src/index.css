@@ -141,3 +141,84 @@
 .glow-outset[data-active='true']::before {
   border-color: rgba(26, 84, 147, 0.6);
 }
+
+/*
+ * Brand wordmark: same silver finish as the page titles, with a specular sheen that
+ * slowly crosses the letters, two tiny glints and a faint glow. Always on, no hover.
+ */
+.text-metal-ring {
+  position: relative;
+  display: inline-block;
+  background-image:
+    linear-gradient(105deg, transparent 40%, rgba(255, 255, 255, 1) 50%, transparent 60%),
+    var(--gradient-silver);
+  background-size: 260% 100%, 100% 100%;
+  background-repeat: no-repeat;
+  background-position: 170% 0, 0 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 5px rgba(223, 205, 185, 0.25));
+  animation: metal-sweep 6s ease-in-out infinite, metal-glow 4s ease-in-out infinite;
+}
+@keyframes metal-sweep {
+  0% { background-position: 170% 0, 0 0; }
+  40%, 100% { background-position: -70% 0, 0 0; }
+}
+@keyframes metal-glow {
+  0%, 100% { filter: drop-shadow(0 0 4px rgba(223, 205, 185, 0.18)); }
+  50% { filter: drop-shadow(0 0 9px rgba(223, 205, 185, 0.42)); }
+}
+
+/* Four-point glints on the letters */
+.text-metal-ring::before,
+.text-metal-ring::after {
+  content: '';
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  pointer-events: none;
+  opacity: 0;
+  filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.95)) drop-shadow(0 0 6px rgba(140, 170, 220, 0.7));
+  background:
+    radial-gradient(circle, #fffbea 0 1.2px, transparent 2px),
+    linear-gradient(#fffbea, #fffbea) center / 1px 100% no-repeat,
+    linear-gradient(#fffbea, #fffbea) center / 100% 1px no-repeat;
+  animation: metal-glint 5s ease-in-out infinite;
+}
+.text-metal-ring::before {
+  left: 18%;
+  top: 8%;
+}
+.text-metal-ring::after {
+  left: 76%;
+  top: 46%;
+  animation-delay: 2.4s;
+}
+@keyframes metal-glint {
+  0%, 62%, 100% { opacity: 0; transform: scale(0.3) rotate(0deg); }
+  72% { opacity: 1; transform: scale(1) rotate(45deg); }
+  84% { opacity: 0; transform: scale(0.4) rotate(90deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .text-metal-ring {
+    animation: none;
+    background-position: 170% 0, 0 0;
+  }
+  .text-metal-ring::before,
+  .text-metal-ring::after {
+    animation: none;
+    opacity: 0;
+  }
+}
+
+/* Phone-ring wiggle for the floating WhatsApp icon on hover */
+@keyframes wa-ring {
+  0%, 100% { transform: rotate(0deg); }
+  15% { transform: rotate(-16deg); }
+  30% { transform: rotate(14deg); }
+  45% { transform: rotate(-10deg); }
+  60% { transform: rotate(8deg); }
+  75% { transform: rotate(-4deg); }
+}
