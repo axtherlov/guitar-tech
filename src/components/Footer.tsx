@@ -33,7 +33,7 @@ export const Footer: React.FC = () => {
           <div className="space-y-3">
             <div className="flex items-center gap-2 text-zinc-100 font-bold text-2xl tracking-tight">
               <span className="w-2.5 h-2.5 rounded-xs bg-amber-500 rotate-45 inline-block" />
-              <span>{content.brandName}</span>
+              <span className="text-metal-ring">{content.brandName}</span>
             </div>
             <p className="text-zinc-400 text-sm leading-relaxed max-w-sm">
               {language === 'es'

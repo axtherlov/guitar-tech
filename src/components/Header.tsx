@@ -55,10 +55,10 @@ export const Header: React.FC = () => {
         <a
           href={language === 'es' ? '/es' : '/en'}
           onClick={(e) => handleNavClick(language === 'es' ? '/es' : '/en', e)}
-          className="text-xl sm:text-2xl font-bold tracking-tight text-zinc-100 hover:text-amber-400 transition-colors whitespace-nowrap shrink-0 flex items-center gap-2"
+          className="text-xl sm:text-2xl font-bold tracking-tight whitespace-nowrap shrink-0 flex items-center gap-2"
         >
           <span className="w-2.5 h-2.5 rounded-xs bg-amber-500 rotate-45 inline-block shrink-0" />
-          <span className="truncate">{content.brandName}</span>
+          <span className="text-metal-ring">{content.brandName}</span>
         </a>
 
         {/* Zone 2: 4 clean single-line text navigation links */}
