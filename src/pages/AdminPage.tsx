@@ -206,7 +206,7 @@ export const AdminPage: React.FC = () => {
               Panel de Administración
             </h1>
             <p className="text-xs text-zinc-400">
-              Acceso seguro para el técnico de Guitar Tech Córdoba
+              Acceso seguro para el técnico de Cuervo Guitar Tech
             </p>
           </div>
 

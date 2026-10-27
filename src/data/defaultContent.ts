@@ -1,7 +1,7 @@
 import type { SiteContent } from '../types.js';
 
 export const DEFAULT_CONTENT: SiteContent = {
-  brandName: 'Guitar Tech Córdoba',
+  brandName: 'Cuervo Guitar Tech',
   whatsappNumber: '+34600000000',
   isWhatsappConfigured: false,
   defaultIntroMessage: {
@@ -9,8 +9,8 @@ export const DEFAULT_CONTENT: SiteContent = {
     en: 'Hello, I am interested in your guitar tech services. Could you provide more information?'
   },
   serviceArea: {
-    es: 'Córdoba capital y comarca (Andalucía, España)',
-    en: 'Córdoba city and metropolitan area (Andalusia, Spain)'
+    es: 'Córdoba (España)',
+    en: 'Córdoba (Spain)'
   },
   hero: {
     badge: {
@@ -575,8 +575,8 @@ export const DEFAULT_CONTENT: SiteContent = {
       en: 'Service area and working modalities'
     },
     workshopDescription: {
-      es: 'El servicio principal se realiza en taller en Córdoba (Andalucía). El cliente entrega el instrumento en cita coordinada y lo recoge una vez finalizada y testeada la intervención. No se realizan envíos nacionales ni internacionales.',
-      en: 'The core service is conducted at the workshop in Córdoba (Andalusia). Clients drop off their instruments by scheduled appointment and pick them up once work is complete and tested. We do not handle national or international shipping.'
+      es: 'El servicio principal se realiza en taller en Córdoba. El cliente entrega el instrumento en cita coordinada y lo recoge una vez finalizada y testeada la intervención. No se realizan envíos nacionales ni internacionales.',
+      en: 'The core service is conducted at the workshop in Córdoba. Clients drop off their instruments by scheduled appointment and pick them up once work is complete and tested. We do not handle national or international shipping.'
     },
     onsiteDescription: {
       es: 'Para trabajos adecuados (calibraciones, revisiones previas a grabación o lotes de varios instrumentos), se ofrece servicio técnico desplazado en Córdoba capital y localidades limítrofes, previa evaluación de viabilidad del trabajo requerido.',
@@ -599,12 +599,12 @@ export const DEFAULT_CONTENT: SiteContent = {
   },
   seo: {
     es: {
-      title: 'Guitar Tech Córdoba | Calibración, Ajuste y Reparación de Guitarras',
+      title: 'Cuervo Guitar Tech | Calibración, Ajuste y Reparación de Guitarras',
       description: 'Técnico especialista en guitarras y bajos en Córdoba. Calibración milimétrica, electrónica, reparaciones y nivelado de trastes. Presupuestos personalizados por WhatsApp.',
       keywords: 'guitar tech cordoba, luthier cordoba, calibracion guitarra cordoba, ajuste guitarra cordoba, reparacion bajo cordoba, nivelado trastes cordoba'
     },
     en: {
-      title: 'Guitar Tech Córdoba | Professional Guitar & Bass Technical Services',
+      title: 'Cuervo Guitar Tech | Professional Guitar & Bass Technical Services',
       description: 'Specialist guitar and bass technician in Córdoba, Spain. Precision setups, electronics, structural repairs, and fret leveling. Personalized quotes via WhatsApp.',
       keywords: 'guitar tech cordoba spain, guitar repair cordoba, guitar setup cordoba, luthier cordoba andalusia, bass setup cordoba'
     }

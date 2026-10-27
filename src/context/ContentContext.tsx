@@ -63,6 +63,8 @@ export const ContentProvider: React.FC<{ children: ReactNode }> = ({ children })
     };
 
     handleLocationChange();
+    // Landing directly on "/path#section": scroll to that section once rendered
+    if (window.location.hash) scrollToHash(window.location.hash.slice(1));
     window.addEventListener('popstate', handleLocationChange);
     return () => window.removeEventListener('popstate', handleLocationChange);
   }, []);
@@ -84,21 +86,41 @@ export const ContentProvider: React.FC<{ children: ReactNode }> = ({ children })
       });
   }, []);
 
-  // Navigate cleanly
-  const navigate = (toPath: string) => {
-    if (toPath !== currentPath) {
-      window.history.pushState({}, '', toPath);
-      setCurrentPath(toPath);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+  // Scroll to an element id once the target page has rendered (retries briefly)
+  const scrollToHash = (hash: string) => {
+    let attempts = 0;
+    const tryScroll = () => {
+      const el = document.getElementById(hash);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else if (attempts++ < 20) {
+        setTimeout(tryScroll, 50);
+      }
+    };
+    tryScroll();
+  };
 
-      if (toPath.startsWith('/en')) {
+  // Navigate cleanly; supports "/path#section" so a link can land on a specific section
+  const navigate = (toPath: string) => {
+    const [pathOnly, hash] = toPath.split('#');
+
+    if (pathOnly !== currentPath) {
+      window.history.pushState({}, '', toPath);
+      setCurrentPath(pathOnly);
+      if (!hash) window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      if (pathOnly.startsWith('/en')) {
         setLanguageState('en');
         document.documentElement.lang = 'en';
-      } else if (toPath.startsWith('/es')) {
+      } else if (pathOnly.startsWith('/es')) {
         setLanguageState('es');
         document.documentElement.lang = 'es';
       }
+    } else if (hash) {
+      window.history.pushState({}, '', toPath);
     }
+
+    if (hash) scrollToHash(hash);
   };
 
   // Switch language preserving equivalent route

@@ -31,16 +31,16 @@ export const Footer: React.FC = () => {
           
           {/* Column 1: Brand & Service Area */}
           <div className="space-y-3">
-            <div className="flex items-center gap-2 text-zinc-100 font-bold text-base tracking-tight">
+            <div className="flex items-center gap-2 text-zinc-100 font-bold text-2xl tracking-tight">
               <span className="w-2.5 h-2.5 rounded-xs bg-amber-500 rotate-45 inline-block" />
               <span>{content.brandName}</span>
             </div>
-            <p className="text-zinc-400 text-xs leading-relaxed max-w-sm">
+            <p className="text-zinc-400 text-sm leading-relaxed max-w-sm">
               {language === 'es'
                 ? 'Servicio técnico especializado para guitarras eléctricas, acústicas y bajos. Taller en Córdoba y asistencia en locales y estudios.'
                 : 'Specialized technical service for electric guitars, acoustics and basses. Workshop based in Córdoba with on-site assistance.'}
             </p>
-            <div className="pt-1 text-xs text-zinc-400 flex items-center gap-1.5">
+            <div className="pt-1 text-sm text-zinc-400 flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-zinc-600 inline-block" />
               <span>{content.serviceArea[language]}</span>
             </div>
@@ -51,7 +51,7 @@ export const Footer: React.FC = () => {
             <h4 className="text-zinc-200 font-semibold text-xs uppercase tracking-wider mb-4">
               {language === 'es' ? 'Navegación' : 'Navigation'}
             </h4>
-            <ul className="space-y-2 text-xs">
+            <ul className="space-y-2 text-sm">
               {navLinks.map((link) => (
                 <li key={link.path}>
                   <a
@@ -71,12 +71,12 @@ export const Footer: React.FC = () => {
             <h4 className="text-zinc-200 font-semibold text-xs uppercase tracking-wider mb-2">
               {language === 'es' ? 'Atención y Citas' : 'Appointments & Care'}
             </h4>
-            <p className="text-xs text-zinc-400 leading-relaxed">
+            <p className="text-sm text-zinc-400 leading-relaxed">
               {language === 'es'
                 ? 'Atención en taller exclusivamente mediante cita previa coordinada a través de WhatsApp. Presupuestos y diagnósticos individualizados sin compromiso.'
                 : 'Workshop intake strictly by prior appointment scheduled via WhatsApp. Individualized quotes and diagnoses with no obligation.'}
             </p>
-            <div className="pt-2 flex items-center gap-4 text-xs text-zinc-400">
+            <div className="pt-2 flex items-center gap-4 text-sm text-zinc-400">
               <div className="flex items-center gap-1">
                 <Shield className="w-3.5 h-3.5 text-zinc-500" />
                 <span>RGPD / LOPDGDD</span>
@@ -100,7 +100,7 @@ export const Footer: React.FC = () => {
             © {new Date().getFullYear()} {content.brandName}. {language === 'es' ? 'Todos los derechos reservados.' : 'All rights reserved.'}
           </div>
           <div className="text-zinc-400 text-[11px]">
-            Córdoba, Andalucía, España
+            Córdoba, España
           </div>
         </div>
       </div>
