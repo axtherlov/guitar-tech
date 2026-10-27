@@ -12,6 +12,8 @@ const DATA_DIR = path.resolve(__dirname, '..', 'data');
 // Fallback password is only honoured in development when ADMIN_PASSWORD is unset.
 const DEV_FALLBACK_PASSWORD = 'guitartech2026';
 const BACKUP_FILENAME = /^backup-[\w-]+\.json$/;
+// Public origin used by sitemap.xml and robots.txt when APP_URL is not set.
+const DEFAULT_APP_URL = 'https://cuervoguitartech.com';
 
 export const isProd = () => process.env.NODE_ENV === 'production';
 
@@ -153,7 +155,7 @@ export function createApp(store: Store = createStore(DATA_DIR)) {
 
   // Dynamic Sitemap & Robots.txt for Local SEO
   app.get('/sitemap.xml', (_req: Request, res: Response) => {
-    const baseUrl = process.env.APP_URL || 'https://cordobaguitartech.com';
+    const baseUrl = process.env.APP_URL || DEFAULT_APP_URL;
     const lastMod = new Date().toISOString().split('T')[0];
 
     const routes = [
@@ -187,7 +189,7 @@ export function createApp(store: Store = createStore(DATA_DIR)) {
   });
 
   app.get('/robots.txt', (_req: Request, res: Response) => {
-    const baseUrl = process.env.APP_URL || 'https://cordobaguitartech.com';
+    const baseUrl = process.env.APP_URL || DEFAULT_APP_URL;
     const robots = `User-agent: *\r\nAllow: /\r\nDisallow: /admin\r\nDisallow: /api/\r\n\r\nSitemap: ${baseUrl}/sitemap.xml\r\n`;
     res.type('text/plain').send(robots);
   });

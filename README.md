@@ -102,7 +102,7 @@ npm start
 Configurables en `.env` (guía en `.env.example`):
 
 - `ADMIN_PASSWORD`: Contraseña para el panel administrativo `/admin`. **Obligatoria en producción**: si no está definida, el acceso queda deshabilitado. En desarrollo (sin `NODE_ENV=production`) y sin esta variable, se acepta una clave de desarrollo local.
-- `APP_URL`: Dominio público del sitio web (ej. `https://cordobaguitartech.com`) utilizado en `sitemap.xml`, `robots.txt` y canonical tags.
+- `APP_URL`: Dominio público del sitio web (ej. `https://cuervoguitartech.com`, que es el valor por defecto si no se define) utilizado en `sitemap.xml`, `robots.txt` y canonical tags.
 - `PORT`: Puerto de escucha del servidor (por defecto `3000`).
 - `UPSTASH_REDIS_REST_URL` / `UPSTASH_REDIS_REST_TOKEN`: Credenciales de Upstash Redis. Si existen, el contenido, las copias de seguridad y las sesiones de admin se guardan en Redis; si no, se usan archivos en `/data` (solo desarrollo local). También se aceptan los nombres `KV_REST_API_URL` / `KV_REST_API_TOKEN` que inyecta Vercel.
 
