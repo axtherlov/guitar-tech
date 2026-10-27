@@ -55,8 +55,8 @@ export const ServicesPage: React.FC = () => {
               id={service.id}
               className={`group rounded-2xl p-6 sm:p-9 transition-all duration-300 ease-out hover:-translate-y-1.5 scroll-mt-24 border ${
                 isTopPriority
-                  ? 'bg-zinc-900/80 border-amber-500/40 hover:bg-gradient-to-br hover:from-blue-900/40 hover:to-bg-base hover:border-blue-700/60 shadow-xl shadow-amber-500/5'
-                  : 'bg-zinc-900/50 border-zinc-800/80 hover:bg-gradient-to-br hover:from-blue-900/40 hover:to-bg-base hover:border-blue-700/60'
+                  ? 'bg-zinc-900/80 border-amber-500/40 glow shadow-xl shadow-amber-500/5'
+                  : 'bg-zinc-900/50 border-zinc-800/80 glow'
               }`}
             >
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">

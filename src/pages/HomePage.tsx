@@ -2,6 +2,13 @@ import React, { useEffect, useRef, useState } from 'react';
 import { useContent } from '../context/ContentContext.tsx';
 import { ArrowRight, Gauge, Wrench } from 'lucide-react';
 
+/** Cards per view for the featured services: 1 on phones, 2 on tablets, 3 on desktop. */
+const getPageSize = () => {
+  if (window.matchMedia('(min-width: 1024px)').matches) return 3;
+  if (window.matchMedia('(min-width: 640px)').matches) return 2;
+  return 1;
+};
+
 export const HomePage: React.FC = () => {
   const { content, language, navigate } = useContent();
 
@@ -12,14 +19,31 @@ export const HomePage: React.FC = () => {
 
   const servicesPath = language === 'es' ? '/es/servicios' : '/en/services';
 
-  // Featured services rotate in groups of 3 (all services, in commercial priority order)
-  const PAGE_SIZE = 3;
+  // Featured services rotate through all services, in commercial priority order.
+  // Cards per view follow the screen: 1 on phones, 2 on tablets, 3 on desktop.
   const ROTATE_MS = 7000;
   const sortedServices = [...content.services].sort((x, y) => (x.order || 0) - (y.order || 0));
-  const pageCount = Math.max(1, Math.ceil(sortedServices.length / PAGE_SIZE));
+  const serviceCount = sortedServices.length;
+  const [pageSize, setPageSize] = useState(getPageSize);
+  const pageCount = Math.max(1, Math.ceil(serviceCount / pageSize));
   const [page, setPage] = useState(0);
   const [paused, setPaused] = useState(false);
-  const visibleServices = sortedServices.slice(page * PAGE_SIZE, page * PAGE_SIZE + PAGE_SIZE);
+  // Wrap around so every view always shows `pageSize` cards
+  const visibleServices = Array.from({ length: Math.min(pageSize, serviceCount) }, (_, i) =>
+    sortedServices[(page * pageSize + i) % serviceCount]
+  );
+
+  useEffect(() => {
+    const queries = [window.matchMedia('(min-width: 1024px)'), window.matchMedia('(min-width: 640px)')];
+    const update = () => setPageSize(getPageSize());
+    queries.forEach((q) => q.addEventListener('change', update));
+    return () => queries.forEach((q) => q.removeEventListener('change', update));
+  }, []);
+
+  // Start again from the first group when the number of cards per view changes
+  useEffect(() => {
+    setPage(0);
+  }, [pageSize]);
 
   useEffect(() => {
     // Auto-rotate unless hovered/focused, single group, or the visitor prefers reduced motion
@@ -69,15 +93,16 @@ export const HomePage: React.FC = () => {
           revealedSections.hero ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6 motion-reduce:opacity-100 motion-reduce:translate-y-0'
         }`}
       >
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-          
-          {/* Column 1: Main heading, supporting text and primary WhatsApp CTA */}
-          <div className="lg:col-span-5 space-y-6">
-            
-            {/* Clean unboxed metadata kicker */}
-            <div className="flex items-center gap-2 text-xs font-semibold text-amber-400 uppercase tracking-widest">
-              <span>{content.hero.badge[language]}</span>
-            </div>
+        {/* Mobile order: kicker, logo, then heading/text. Desktop: text on the left, logo on the right. */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-x-12 gap-y-6 items-center">
+
+          {/* Clean unboxed metadata kicker */}
+          <div className="order-1 lg:col-span-5 lg:col-start-1 lg:row-start-1 lg:self-end flex items-center gap-2 text-xs font-semibold text-amber-400 uppercase tracking-widest">
+            <span>{content.hero.badge[language]}</span>
+          </div>
+
+          {/* Main heading, supporting text and primary CTA */}
+          <div className="order-3 lg:col-span-5 lg:col-start-1 lg:row-start-2 lg:self-start space-y-6">
 
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-silver tracking-tight leading-[1.15]" style={{ textWrap: 'balance' }}>
               {content.hero.title[language]}
@@ -100,8 +125,8 @@ export const HomePage: React.FC = () => {
             </div>
           </div>
 
-          {/* Column 2: Prominent realistic photography of guitar workbench */}
-          <div className="lg:col-span-7 relative">
+          {/* Logo */}
+          <div className="order-2 lg:col-span-7 lg:col-start-6 lg:row-start-1 lg:row-span-2 lg:self-center relative">
             <div className="group relative rounded-2xl overflow-hidden border border-zinc-800/90 shadow-2xl bg-zinc-900">
               <img
                 src="/images/el-kuervo-logo.webp"
@@ -138,18 +163,18 @@ export const HomePage: React.FC = () => {
 
         {/* Rotating service cards: 3 at a time, whole card links to that service on the Services page */}
         <div
-          onMouseEnter={() => setPaused(true)}
-          onMouseLeave={() => setPaused(false)}
-          onFocus={() => setPaused(true)}
+          onPointerEnter={(e) => { if (e.pointerType === 'mouse') setPaused(true); }}
+          onPointerLeave={() => setPaused(false)}
+          onFocus={(e) => { if (e.target.matches(':focus-visible')) setPaused(true); }}
           onBlur={() => setPaused(false)}
         >
-          <div key={page} className="services-fade grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div key={page} className="services-fade grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {visibleServices.map((service) => (
               <a
                 key={service.id}
                 href={`${servicesPath}#${service.id}`}
                 onClick={(e) => handleNav(`${servicesPath}#${service.id}`, e)}
-                className="group bg-zinc-900/60 border border-zinc-800/80 rounded-2xl p-5 sm:p-6 transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-2xl flex flex-col hover:bg-gradient-to-br hover:from-blue-900/40 hover:to-bg-base hover:border-blue-700/60 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400"
+                className="group bg-zinc-900/60 border border-zinc-800/80 rounded-2xl p-5 sm:p-6 transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-2xl flex flex-col glow focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400"
               >
                 <div className="space-y-4">
                   {/* Visual card header with stock photo */}
@@ -161,9 +186,6 @@ export const HomePage: React.FC = () => {
                       loading="lazy"
                       referrerPolicy="no-referrer"
                     />
-                    <div className="absolute top-3 left-3 bg-zinc-950/80 backdrop-blur-xs px-2.5 py-1 rounded-lg text-xs font-mono font-bold text-amber-400 border border-zinc-800/60">
-                      {String(sortedServices.indexOf(service) + 1).padStart(2, '0')}
-                    </div>
                   </div>
 
                   <div>
@@ -221,7 +243,7 @@ export const HomePage: React.FC = () => {
       {/* 3. WORKING APPROACH & RIGOR */}
       <section
         data-section-id="approach"
-        className={`bg-zinc-900/40 border border-zinc-800/80 rounded-2xl hover:bg-gradient-to-br hover:from-blue-900/40 hover:to-bg-base hover:border-blue-700/60 p-8 sm:p-12 transition-all duration-700 ease-out delay-150 ${
+        className={`bg-zinc-900/40 border border-zinc-800/80 rounded-2xl glow p-8 sm:p-12 transition-all duration-700 ease-out delay-150 ${
           revealedSections.approach ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6 motion-reduce:opacity-100 motion-reduce:translate-y-0'
         }`}
       >
@@ -259,7 +281,7 @@ export const HomePage: React.FC = () => {
       {/* 4. ABOUT SNIPPET & WORKSHOP ENVIRONMENT */}
       <section
         data-section-id="about"
-        className={`grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative isolate before:content-[''] before:absolute before:-inset-6 before:-z-10 before:rounded-2xl before:border before:border-transparent before:opacity-0 before:transition-all before:duration-300 before:bg-gradient-to-br before:from-blue-900/40 before:to-bg-base hover:before:opacity-100 hover:before:border-blue-700/60 transition-all duration-700 ease-out delay-200 ${
+        className={`grid grid-cols-1 lg:grid-cols-12 gap-10 items-center glow glow-outset transition-all duration-700 ease-out delay-200 ${
           revealedSections.about ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6 motion-reduce:opacity-100 motion-reduce:translate-y-0'
         }`}
       >
@@ -306,7 +328,7 @@ export const HomePage: React.FC = () => {
       {/* 5. COVERAGE & MODALITIES STATEMENT */}
       <section
         data-section-id="coverage"
-        className={`bg-zinc-900/60 border border-zinc-800 rounded-2xl hover:bg-gradient-to-br hover:from-blue-900/40 hover:to-bg-base hover:border-blue-700/60 p-8 sm:p-10 transition-all duration-700 ease-out delay-150 ${
+        className={`bg-zinc-900/60 border border-zinc-800 rounded-2xl glow p-8 sm:p-10 transition-all duration-700 ease-out delay-150 ${
           revealedSections.coverage ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6 motion-reduce:opacity-100 motion-reduce:translate-y-0'
         }`}
       >
@@ -342,7 +364,7 @@ export const HomePage: React.FC = () => {
       {/* 6. FINAL DIRECT CALL TO ACTION (Requirement 8 & 9) */}
       <section
         data-section-id="cta"
-        className={`text-center bg-gradient-to-b from-zinc-900/80 to-zinc-950 border border-zinc-800/80 rounded-2xl hover:bg-gradient-to-br hover:from-blue-900/40 hover:to-bg-base hover:border-blue-700/60 p-8 sm:p-14 transition-all duration-700 ease-out delay-100 ${
+        className={`text-center bg-gradient-to-b from-zinc-900/80 to-zinc-950 border border-zinc-800/80 rounded-2xl glow p-8 sm:p-14 transition-all duration-700 ease-out delay-100 ${
           revealedSections.cta ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6 motion-reduce:opacity-100 motion-reduce:translate-y-0'
         }`}
       >

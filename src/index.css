@@ -101,3 +101,43 @@
     animation: none;
   }
 }
+
+/*
+ * Blue wash on cards and sections ("glow"): shown on hover, and while the block
+ * crosses the middle of the screen (data-active is set by the observer in App.tsx).
+ */
+.glow {
+  position: relative;
+  isolation: isolate;
+}
+.glow::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background-image: linear-gradient(to bottom right, rgba(14, 50, 92, 0.4), #050a12);
+  opacity: 0;
+  transition: opacity 500ms ease;
+  pointer-events: none;
+}
+.glow:hover::before,
+.glow[data-active='true']::before {
+  opacity: 1;
+}
+.glow:hover,
+.glow[data-active='true'] {
+  border-color: rgba(26, 84, 147, 0.6);
+}
+
+/* Variant for blocks without their own box: the wash sits slightly outside the content */
+.glow-outset::before {
+  inset: -1.5rem;
+  border: 1px solid transparent;
+  border-radius: 1rem;
+  transition: opacity 500ms ease, border-color 500ms ease;
+}
+.glow-outset:hover::before,
+.glow-outset[data-active='true']::before {
+  border-color: rgba(26, 84, 147, 0.6);
+}

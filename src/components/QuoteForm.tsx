@@ -114,7 +114,7 @@ export const QuoteForm: React.FC = () => {
   };
 
   return (
-    <div className="bg-zinc-900/90 border border-zinc-800 rounded-xl p-6 sm:p-8 max-w-2xl mx-auto shadow-xl transition-all duration-300 hover:bg-gradient-to-br hover:from-blue-900/40 hover:to-bg-base hover:border-blue-700/60">
+    <div className="bg-zinc-900/90 border border-zinc-800 rounded-xl p-6 sm:p-8 max-w-2xl mx-auto shadow-xl transition-all duration-300 glow">
       <div className="mb-6">
         <h3 className="text-xl font-bold text-zinc-100 tracking-tight">
           {language === 'es' ? 'Solicitar presupuesto personalizado' : 'Request a personalized quote'}

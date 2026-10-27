@@ -30,7 +30,7 @@ export const ContactPage: React.FC = () => {
         </div>
 
         {/* Direct WhatsApp channel: text on the left, icon-only button on the right */}
-        <div className="bg-zinc-900 border border-zinc-800 rounded-2xl transition-all duration-300 hover:bg-gradient-to-br hover:from-blue-900/40 hover:to-bg-base hover:border-blue-700/60 p-6 flex items-center justify-between gap-5 shadow-lg">
+        <div className="bg-zinc-900 border border-zinc-800 rounded-2xl transition-all duration-300 glow p-6 flex items-center justify-between gap-5 shadow-lg">
           <div className="space-y-2">
             <div className="text-xs font-semibold text-amber-400 uppercase tracking-wider flex items-center gap-1.5">
               <WhatsAppIcon className="w-4 h-4 fill-current" />
@@ -57,7 +57,7 @@ export const ContactPage: React.FC = () => {
         </div>
 
         {/* Workshop intake info with clickable map preview */}
-        <div className="bg-zinc-900/60 border border-zinc-800 rounded-xl overflow-hidden transition-all duration-300 hover:bg-gradient-to-br hover:from-blue-900/40 hover:to-bg-base hover:border-blue-700/60">
+        <div className="bg-zinc-900/60 border border-zinc-800 rounded-xl overflow-hidden transition-all duration-300 glow">
           <div className="p-6 pb-4 space-y-3">
             <div className="flex items-center gap-2 text-zinc-100 font-bold text-sm">
               <MapPin className="w-4 h-4 text-amber-400" />

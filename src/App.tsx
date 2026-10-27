@@ -44,6 +44,39 @@ const AppRouter: React.FC = () => {
     }
   }, [currentPath, language, content]);
 
+  // Blue wash follows the scroll: only the ".glow" blocks crossing the middle band of the
+  // screen are active, so it moves to the next block as the visitor scrolls.
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          (entry.target as HTMLElement).dataset.active = entry.isIntersecting ? 'true' : 'false';
+        });
+      },
+      { rootMargin: '-40% 0px -40% 0px' }
+    );
+
+    const watched = new WeakSet<Element>();
+    const scan = () => {
+      document.querySelectorAll('.glow').forEach((el) => {
+        if (!watched.has(el)) {
+          watched.add(el);
+          observer.observe(el);
+        }
+      });
+    };
+
+    scan();
+    // Pages and the rotating service cards add new blocks to the DOM over time
+    const mutations = new MutationObserver(scan);
+    mutations.observe(document.body, { childList: true, subtree: true });
+
+    return () => {
+      observer.disconnect();
+      mutations.disconnect();
+    };
+  }, []);
+
   // Route resolver
   const renderCurrentPage = () => {
     switch (currentPath) {

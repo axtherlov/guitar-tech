@@ -51,7 +51,7 @@ export const AboutPage: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         
         {/* 1. Technical Experience */}
-        <div className="bg-zinc-900/60 border border-zinc-800/80 rounded-2xl p-7 space-y-4 transition-all duration-300 hover:bg-gradient-to-br hover:from-blue-900/40 hover:to-bg-base hover:border-blue-700/60">
+        <div className="bg-zinc-900/60 border border-zinc-800/80 rounded-2xl p-7 space-y-4 transition-all duration-300 glow">
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 rounded-xl bg-zinc-800 border border-zinc-700 flex items-center justify-center text-amber-400">
               <Wrench className="w-6 h-6" />
@@ -68,7 +68,7 @@ export const AboutPage: React.FC = () => {
         </div>
 
         {/* 2. Passion for Guitars */}
-        <div className="bg-zinc-900/60 border border-zinc-800/80 rounded-2xl p-7 space-y-4 transition-all duration-300 hover:bg-gradient-to-br hover:from-blue-900/40 hover:to-bg-base hover:border-blue-700/60">
+        <div className="bg-zinc-900/60 border border-zinc-800/80 rounded-2xl p-7 space-y-4 transition-all duration-300 glow">
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 rounded-xl bg-zinc-800 border border-zinc-700 flex items-center justify-center text-amber-400">
               <Heart className="w-6 h-6" />
@@ -85,7 +85,7 @@ export const AboutPage: React.FC = () => {
         </div>
 
         {/* 3. Working Philosophy & Precision */}
-        <div className="bg-zinc-900/60 border border-zinc-800/80 rounded-2xl p-7 space-y-4 transition-all duration-300 hover:bg-gradient-to-br hover:from-blue-900/40 hover:to-bg-base hover:border-blue-700/60">
+        <div className="bg-zinc-900/60 border border-zinc-800/80 rounded-2xl p-7 space-y-4 transition-all duration-300 glow">
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 rounded-xl bg-zinc-800 border border-zinc-700 flex items-center justify-center text-amber-400">
               <Compass className="w-6 h-6" />
@@ -105,7 +105,7 @@ export const AboutPage: React.FC = () => {
         </div>
 
         {/* 4. Workshop Tools & Equipment */}
-        <div className="bg-zinc-900/60 border border-zinc-800/80 rounded-2xl p-7 space-y-4 transition-all duration-300 hover:bg-gradient-to-br hover:from-blue-900/40 hover:to-bg-base hover:border-blue-700/60">
+        <div className="bg-zinc-900/60 border border-zinc-800/80 rounded-2xl p-7 space-y-4 transition-all duration-300 glow">
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 rounded-xl bg-zinc-800 border border-zinc-700 flex items-center justify-center text-amber-400">
               <Cpu className="w-6 h-6" />
