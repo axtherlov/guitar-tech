@@ -1,0 +1,570 @@
+{
+  "brandName": "Guitar Tech Córdoba (Verified Workshop)",
+  "whatsappNumber": "+34600000000",
+  "isWhatsappConfigured": false,
+  "defaultIntroMessage": {
+    "es": "Hola, estoy interesado/a en tus servicios de guitar tech. ¿Podrías darme más información?",
+    "en": "Hello, I am interested in your guitar tech services. Could you provide more information?"
+  },
+  "serviceArea": {
+    "es": "Córdoba capital y comarca (Andalucía, España)",
+    "en": "Córdoba city and metropolitan area (Andalusia, Spain)"
+  },
+  "hero": {
+    "badge": {
+      "es": "Servicio Técnico Especializado · Córdoba",
+      "en": "Specialized Technical Service · Córdoba"
+    },
+    "title": {
+      "es": "Precisión técnica y calibración para tu guitarra o bajo",
+      "en": "Technical precision and setup for your guitar or bass"
+    },
+    "subtitle": {
+      "es": "Ajuste fino, electrónica, nivelado de trastes y mantenimiento integral en Córdoba. Tu instrumento optimizado para su máximo confort, afinación y respuesta sonora.",
+      "en": "Fine setup, custom wiring, fret leveling and thorough maintenance in Córdoba. Optimizing your instrument for maximum playability, tuning stability and tone."
+    },
+    "ctaQuote": {
+      "es": "Solicitar presupuesto",
+      "en": "Request a quote"
+    },
+    "ctaWhatsapp": {
+      "es": "Consultar por WhatsApp",
+      "en": "Chat on WhatsApp"
+    }
+  },
+  "approach": {
+    "title": {
+      "es": "Enfoque de trabajo: rigor milimétrico y respeto por el instrumento",
+      "en": "Work approach: millimeter precision and respect for the instrument"
+    },
+    "subtitle": {
+      "es": "Cada instrumento responde a una tensión, calibre de cuerdas y tacto de pulsación específicos. No aplicamos ajustes genéricos; medimos, diagnosticamos y ajustamos de forma individual.",
+      "en": "Every instrument responds to specific string tension, gauge and playing touch. We do not apply generic settings; we measure, diagnose and calibrate each piece individually."
+    },
+    "pillars": [
+      {
+        "title": {
+          "es": "Diagnóstico previo minucioso",
+          "en": "Meticulous preliminary diagnosis"
+        },
+        "description": {
+          "es": "Inspección de curvatura de mástil, altura de cejuela, estado de trastes, radio del diapasón y electrónica antes de intervenir.",
+          "en": "Inspection of neck relief, nut height, fret condition, fretboard radius and electronics before any intervention."
+        }
+      },
+      {
+        "title": {
+          "es": "Herramientas de luthería de precisión",
+          "en": "Precision lutherie tooling"
+        },
+        "description": {
+          "es": "Galgas de espesores, reglas de filo biselado, calibres digitales, afinadores estroboscópicos y estaciones de soldadura con temperatura controlada.",
+          "en": "Feeler gauges, precision straightedges, digital calipers, strobe tuning accuracy and temperature-controlled soldering stations."
+        }
+      },
+      {
+        "title": {
+          "es": "Ajuste personalizado a tu estilo",
+          "en": "Customized to your playing style"
+        },
+        "description": {
+          "es": "Calibramos la acción, altura de pastillas y compensación según toques con púa pesada, dedos, afinaciones alternativas o afinación estándar.",
+          "en": "Action, pickup heights and intonation are dialed in according to whether you use heavy picks, fingerstyle, standard or drop tunings."
+        }
+      },
+      {
+        "title": {
+          "es": "Transparencia y comunicación directa",
+          "en": "Transparency and direct contact"
+        },
+        "description": {
+          "es": "Te explicamos con total claridad el estado real de tu instrumento, los pasos necesarios y el presupuesto antes de iniciar cualquier labor.",
+          "en": "We clearly explain the actual state of your instrument, the necessary steps and the quote before starting any work."
+        }
+      }
+    ]
+  },
+  "about": {
+    "ownerNotice": {
+      "es": "[Espacio configurable: Los detalles específicos de trayectoria y equipamiento exacto del taller pueden actualizarse desde el panel de administración]",
+      "en": "[Configurable section: Specific background and exact workshop equipment can be updated via the admin panel]"
+    },
+    "experience": {
+      "es": [
+        "Formación técnica continua y años dedicados al estudio del comportamiento de las maderas, la tensión de las cuerdas y los sistemas electromagnéticos de guitarras eléctricas, acústicas y bajos.",
+        "Experiencia en el diagnóstico de problemas de trasteo, desajustes estacionales por variaciones de temperatura y humedad, y resolución de ruidos o pérdidas de señal en circuitos pasivos y activos."
+      ],
+      "en": [
+        "Continuous technical training and years dedicated to studying wood stability, string tension dynamics and electromagnetic circuits in electric guitars, acoustics and basses.",
+        "Experience diagnosing fret buzz, seasonal neck shifts caused by Córdoba’s temperature and humidity swings, and resolving ground loops or signal loss in passive and active systems."
+      ]
+    },
+    "passion": {
+      "es": [
+        "La guitarra no es solo un objeto de madera y metal: es el canal expresivo de un músico. Ver cómo un instrumento apagado o incómodo recupera su comodidad y resonancia tras una intervención es el núcleo de este taller.",
+        "Tratamos cada guitarra o bajo con la misma atención y cuidado minucioso, ya sea un instrumento de iniciación con alto valor sentimental o una pieza vintage de colección."
+      ],
+      "en": [
+        "A guitar is not merely wood and metal; it is an artist’s expressive tool. Seeing an uncomfortable or dull instrument regain its resonance and ease of play is the heart of this workshop.",
+        "Every guitar or bass is handled with the exact same rigor and care, whether it is a first instrument of high sentimental value or a high-end vintage piece."
+      ]
+    },
+    "philosophy": {
+      "es": [
+        "Mínima intervención destructiva: conservar siempre las piezas originales siempre que sea técnicamente viable.",
+        "Ajustes basados en mediciones cuantificables, no en suposiciones.",
+        "Compromiso ético: presupuestos personalizados sin costes ocultos ni intervenciones innecesarias."
+      ],
+      "en": [
+        "Minimal destructive intervention: preserving original components whenever technically viable.",
+        "Calibrations driven by quantifiable tolerances and measurements, never guesswork.",
+        "Ethical commitment: transparent personalized quotes with no hidden costs or unneeded modifications."
+      ]
+    },
+    "equipment": {
+      "es": [
+        "Reglas de verificación de mástil entalladas y rectas de precisión rectificadas.",
+        "Fret rocker y galgas milimétricas de espesores para detección de desniveles.",
+        "Limas de coronado diamantadas y abrasivos micromesh de hasta 12.000 grit.",
+        "Afinador estroboscópico de alta resolución para quintado e intonación armónica exacta.",
+        "Estación de desoldadura y soldadura profesional regulada, multímetro digital y cables apantallados."
+      ],
+      "en": [
+        "Precision notched straightedges and ground true leveling beams.",
+        "Fret rockers and metric feeler gauges for pinpointing high frets.",
+        "Diamond crowning files and micro-mesh polishing pads up to 12,000 grit.",
+        "High-resolution strobe tuner for exact octave intonation and harmonic alignment.",
+        "Temperature-regulated soldering station, digital multimeter and braided shielded wire."
+      ]
+    }
+  },
+  "services": [
+    {
+      "id": "setup-calibration",
+      "order": 1,
+      "category": "setup",
+      "name": {
+        "es": "Ajuste y calibración completa",
+        "en": "Complete setup and calibration"
+      },
+      "shortDesc": {
+        "es": "Ajuste integral de alma, acción, quintado y alturas de pastilla para máxima comodidad y afinación precisa.",
+        "en": "Comprehensive truss rod, string action, intonation and pickup height adjustment for optimal playability."
+      },
+      "problems": {
+        "es": [
+          "Cuerdas excesivamente duras o demasiado altas sobre los trastes.",
+          "Trasteos molestos en primeros trastes o en registros agudos.",
+          "El instrumento desafina al tocar acordes a lo largo del mástil.",
+          "Pérdida de sustain o volumen desigual entre pastillas."
+        ],
+        "en": [
+          "Excessively stiff action or strings sitting too far off the fretboard.",
+          "Annoying fret buzz in lower positions or high register choking.",
+          "Instrument goes out of tune when playing chords up the neck.",
+          "Uneven volume balance between pickups or loss of acoustic sustain."
+        ]
+      },
+      "workIncluded": {
+        "es": [
+          "Inspección y ajuste de curvatura del mástil mediante el alma (truss rod).",
+          "Calibración de la altura de cuerdas en puente y cejuela (acción milimétrica).",
+          "Ajuste del quintado/entonación armónica con afinador estroboscópico.",
+          "Calibración de la altura y balance de salida de pastillas.",
+          "Revisión y apriete de tornillería, clavijeros y jack."
+        ],
+        "en": [
+          "Truss rod inspection and precise relief adjustment.",
+          "String action calibration at both nut slots and bridge saddles.",
+          "Harmonic intonation tuning using high-accuracy strobe equipment.",
+          "Pickup height balancing for even frequency response.",
+          "Hardware tightening: tuners, strap buttons, bridge screws and output jack."
+        ]
+      },
+      "image": "/src/assets/images/hero_guitar_workbench_1793042582513.jpg"
+    },
+    {
+      "id": "electronics",
+      "order": 2,
+      "category": "electronics",
+      "name": {
+        "es": "Electrónica y sustitución de pastillas",
+        "en": "Electronics and pickup replacement"
+      },
+      "shortDesc": {
+        "es": "Instalación de pastillas, cambio de potenciómetros, conmutadores, apantallado y diagnóstico de ruidos.",
+        "en": "Pickup installation, potentiometer & switch replacement, shielding and electrical fault diagnosis."
+      },
+      "problems": {
+        "es": [
+          "Ruidos parásitos, chasquidos al mover potenciómetros o el selector.",
+          "Zumbido persistente (hum) que no cesa al soltar las cuerdas.",
+          "Cortes de señal intermitentes o jack flojo que falla.",
+          "Deseo de cambiar el tono instalando pastillas de mayor calidad."
+        ],
+        "en": [
+          "Crackling noises when turning tone/volume pots or switching pickups.",
+          "Persistent ground hum or interference when hands leave the bridge/strings.",
+          "Intermittent signal dropouts, loose or noisy output jack.",
+          "Desire to upgrade tone with premium aftermarket pickups."
+        ]
+      },
+      "workIncluded": {
+        "es": [
+          "Instalación y conexionado de pastillas pasivas y activas.",
+          "Sustitución de potenciómetros (CTS/Alpha), conmutadores (CRL/Oak) y jacks Switchcraft.",
+          "Cableado vintage con hilo forrado de tela o apantallamiento de alta fidelidad.",
+          "Apantallado de cavidades con lámina de cobre para eliminación de ruidos.",
+          "Diagnóstico con multímetro y corrección de bucles de masa."
+        ],
+        "en": [
+          "Installation and wiring of passive and active pickup sets.",
+          "Replacement of pots (CTS/Alpha), selector switches (CRL/Oak) and heavy-duty jacks.",
+          "Vintage cloth push-back wiring or modern coaxial shielded harness assembly.",
+          "Cavity copper shielding to eliminate RF interference and 50Hz hum.",
+          "Multimeter continuity testing and ground loop rectification."
+        ]
+      },
+      "image": "/src/assets/images/guitar_electronics_soldering_1793042584609.jpg"
+    },
+    {
+      "id": "modifications",
+      "order": 3,
+      "category": "modifications",
+      "name": {
+        "es": "Modificaciones y mejoras (Upgrades)",
+        "en": "Modifications and hardware upgrades"
+      },
+      "shortDesc": {
+        "es": "Mejora de clavijeros de bloqueo, puentes de alta gama, cejuelas de hueso talladas y modificaciones de circuito.",
+        "en": "Upgrades to locking tuners, precision bridges, custom bone nuts and circuit tone mods."
+      },
+      "problems": {
+        "es": [
+          "Inestabilidad recurrente de afinación al tocar o usar trémolo.",
+          "Cejuela de plástico defectuosa, desgastada o que ahoga las cuerdas.",
+          "Puente original con piezas oxidadas o radios no acordes al mástil.",
+          "Necesidad de opciones tímbricas como coil-split, serie/paralelo o treble bleed."
+        ],
+        "en": [
+          "Recurring tuning drift when bending strings or using the vibrato arm.",
+          "Factory plastic nut binding the strings or deadening open string resonance.",
+          "Worn, oxidized bridge saddles or mismatch with fingerboard radius.",
+          "Seeking expanded tonal options like coil-splitting, phase inversion or treble bleed."
+        ]
+      },
+      "workIncluded": {
+        "es": [
+          "Talla artesanal de cejuela de hueso natural o Tusq a la medida de tu instrumento.",
+          "Instalación de clavijeros de bloqueo (Gotoh, Schaller, Grover).",
+          "Sustitución e instalación de puentes fijos, tipo Strat o trémolos flotantes.",
+          "Instalación de circuitos Treble Bleed, push-pull o blend pots."
+        ],
+        "en": [
+          "Hand-carved natural unbleached bone or Graph Tech Tusq nut tailored to your string gauge.",
+          "Installation of precision locking tuners (Gotoh, Schaller, Grover).",
+          "Bridge and saddle upgrades for fixed bridges, vintage tremolos or Floyd Rose.",
+          "Wiring custom circuits: Treble Bleeds, coil splits via push-pull pots or blend circuits."
+        ]
+      }
+    },
+    {
+      "id": "fret-leveling",
+      "order": 4,
+      "category": "frets",
+      "name": {
+        "es": "Nivelado, coronado y pulido de trastes",
+        "en": "Fret leveling, recrowning and mirror polishing"
+      },
+      "shortDesc": {
+        "es": "Eliminación milimétrica de marcas de desgaste y nivelación perfecta para permitir una acción ultrabaja sin zumbidos.",
+        "en": "Millimeter leveling of fret wear and crowning for ultra-low action with zero choking."
+      },
+      "problems": {
+        "es": [
+          "Muescas o surcos en trastes debajo de las cuerdas finas.",
+          "Zumbidos localizados en trastes específicos que impiden bajar la acción.",
+          "Sensación áspera o chirrido al realizar bendings o vibratos.",
+          "Bordes de trastes cortantes por retracción estacional de la madera."
+        ],
+        "en": [
+          "Pits, indentations or flat spots under the unwound high strings.",
+          "Specific notes choking out or buzzing during string bends.",
+          "Rough, gritty sensation when bending strings against frets.",
+          "Sharp fret ends protruding along the fretboard edge due to seasonal wood shrinkage."
+        ]
+      },
+      "workIncluded": {
+        "es": [
+          "Verificación del relieve con regla entallada bajo tensión simulada.",
+          "Rectificado y nivelado de precisión de la corona de todos los trastes.",
+          "Recoronado manual con limas diamantadas para devolver la cumbre cilíndrica exacta.",
+          "Lizado y pulido progresivo con micro-mesh hasta acabado espejo.",
+          "Biselado y suavizado de los extremos de trastes (fret sprout)."
+        ],
+        "en": [
+          "Neck relief verification under simulated string tension.",
+          "Precision leveling along the entire fret run with ground leveling beam.",
+          "Hand recrowning with specialized diamond files to restore the narrow crown apex.",
+          "Progressive sanding and micro-mesh buffing up to mirror shine.",
+          "Fret end dressing and deburring for silky smooth thumb transitions."
+        ]
+      },
+      "image": "/src/assets/images/fretwork_precision_luthier_1793042582589.jpg"
+    },
+    {
+      "id": "refretting",
+      "order": 5,
+      "category": "frets",
+      "name": {
+        "es": "Retrasteado completo o parcial",
+        "en": "Complete or partial refretting"
+      },
+      "shortDesc": {
+        "es": "Sustitución de trastes gastados por alpaca alemana tradicional o acero inoxidable de máxima durabilidad.",
+        "en": "Replacement of worn frets with premium nickel-silver or lifetime-grade stainless steel wire."
+      },
+      "problems": {
+        "es": [
+          "Trastes con desgaste severo que no admiten un nuevo nivelado.",
+          "Trastes levantados o sueltos en el diapasón.",
+          "Preferencia por cambiar a un perfil diferente (Medium Jumbo, Jumbo, Vintage).",
+          "Deseo de actualizar a trastes de acero inoxidable para evitar desgaste futuro."
+        ],
+        "en": [
+          "Frets worn down too low to safely tolerate another level and crown.",
+          "Loose or unseated frets rocking in their fret slots.",
+          "Desire to change to a different fret size (Medium Jumbo, Jumbo, Narrow Tall).",
+          "Seeking an upgrade to stainless steel frets for lifetime smooth bending and zero wear."
+        ]
+      },
+      "workIncluded": {
+        "es": [
+          "Extracción térmica controlada de trastes sin desportillar el diapasón.",
+          "Rectificado y acondicionamiento del radio del diapasón (ébano, palisandro o arce).",
+          "Limpieza y profundizado de ranuras de traste.",
+          "Instalación por presión de trastes nuevos (alpaca o acero inoxidable).",
+          "Nivelado final, coronado, pulido y calibración completa del instrumento."
+        ],
+        "en": [
+          "Controlled heat extraction of old frets preventing fretboard chip-out.",
+          "Trueing and conditioning of fretboard radius (rosewood, ebony, or maple).",
+          "Fret slot cleaning and depth uniformization.",
+          "Precision radiused pressing of new fret wire (nickel-silver or stainless steel).",
+          "Subsequent leveling, precision crowning, high polish and full setup."
+        ]
+      }
+    },
+    {
+      "id": "repairs",
+      "order": 6,
+      "category": "repairs",
+      "name": {
+        "es": "Reparaciones mecánicas y estructurales",
+        "en": "Mechanical and structural repairs"
+      },
+      "shortDesc": {
+        "es": "Reparación de fracturas de pala, encolados estructurales, fisuras y problemas mecánicos de hardware.",
+        "en": "Headstock break repair, structural regluing, wood fissures and mechanical hardware restoration."
+      },
+      "problems": {
+        "es": [
+          "Pala rota o fracturada por impacto (habitual en mástiles inclinados tipo Gibson).",
+          "Puente de guitarra acústica despegado o levantado de la tapa armónica.",
+          "Pernos de puente o anclajes flojos o con madera rajada.",
+          "Grietas por sequedad o golpes en la caja o el mástil."
+        ],
+        "en": [
+          "Headstock fracture or cracked neck from a fall or case impact.",
+          "Acoustic guitar bridge lifting away from the spruce soundboard.",
+          "Stripped bridge studs, strap screw holes or worn anchor points.",
+          "Wood fissures or seam separations due to climate exposure or trauma."
+        ]
+      },
+      "workIncluded": {
+        "es": [
+          "Diagnóstico estructural y estabilización del instrumento.",
+          "Encolado con adhesivos de luthería adecuados (Titebond tradicional o cola animal).",
+          "Refuerzos internos o espigas de madera maciza cuando la rotura lo requiera.",
+          "Retoque de barniz y sellado en la zona intervenida.",
+          "Comprobación de resistencia bajo tensión completa de cuerdas."
+        ],
+        "en": [
+          "Structural diagnosis and tension stabilization.",
+          "Clamping and bonding with authentic lutherie glues (aliphatic resin / hide glue).",
+          "Splines or reinforcement dowels when required for structural rigidity.",
+          "Localized lacquer touch-up and seal around repair seams.",
+          "Proof testing under full string tension and pitch calibration."
+        ]
+      }
+    },
+    {
+      "id": "maintenance",
+      "order": 7,
+      "category": "maintenance",
+      "name": {
+        "es": "Mantenimiento preventivo y limpieza profunda",
+        "en": "Preventive maintenance and deep detailing"
+      },
+      "shortDesc": {
+        "es": "Tratamiento e hidratación de maderas descubiertas, pulido de barnices, desoxidación de herrajes y revisión.",
+        "en": "Raw wood conditioning, finish buffing, hardware deoxidation and electrical contact rejuvenation."
+      },
+      "problems": {
+        "es": [
+          "Diapasón reseco, blanquecino o con acumulación de suciedad y sudor.",
+          "Herrajes metálicos con corrosión inicial o polvo acumulado.",
+          "Cuerpo apagado o con marcas de roce y sudor seco.",
+          "Instrumento que ha pasado mucho tiempo guardado en funda o estuche."
+        ],
+        "en": [
+          "Dry, pale fretboard with dried sweat, skin oils and grime buildup.",
+          "Metal hardware developing surface oxidation or accumulated dust.",
+          "Body finish dulled by stage sweat, grease and fingerprints.",
+          "Instrument taken out of storage needing inspection before rehearsals or gigs."
+        ]
+      },
+      "workIncluded": {
+        "es": [
+          "Limpieza profunda no abrasiva del diapasón y trastes.",
+          "Hidratación con aceites botánicos adecuados según la especie de madera.",
+          "Limpieza y lubricación de partes móviles (selletas, engranajes de afinadores).",
+          "Limpiacontactos dieléctrico en potenciómetros y conmutadores.",
+          "Pulido fino y abrillantado del cuerpo y pala."
+        ],
+        "en": [
+          "Non-abrasive deep sanitation of fretboard and frets.",
+          "Hydration with organic wood oils formulated for unfinished tone woods.",
+          "Cleaning and mechanical lubrication of tuners, saddle pivots and tremolo knives.",
+          "Electrical contact cleaner treatment for switches and pots.",
+          "High-luster wax polish and hand buffing of body and headstock."
+        ]
+      },
+      "image": "/src/assets/images/technician_tools_workbench_1793042583573.jpg"
+    },
+    {
+      "id": "onsite",
+      "order": 8,
+      "category": "onsite",
+      "name": {
+        "es": "Servicio técnico a domicilio y local de ensayo",
+        "en": "On-site technical service (Homes, Studios & Rehearsal Spaces)"
+      },
+      "shortDesc": {
+        "es": "Ajustes y puestas a punto in situ en Córdoba para grabaciones, ensayos o músicos con varios instrumentos.",
+        "en": "On-site calibrations and troubleshooting in Córdoba for recording sessions, rehearsals or multi-instrument setups."
+      },
+      "problems": {
+        "es": [
+          "Sesión de grabación inminente en estudio donde una guitarra desajustada arruina las tomas.",
+          "Músicos o coleccionistas con varias guitarras que prefieren calibrarlas en su propio espacio.",
+          "Urgencias técnicas previas a un concierto o ensayo general.",
+          "Dificultad de desplazamiento del músico para transportar varios instrumentos."
+        ],
+        "en": [
+          "Upcoming recording session where poor intonation or hum threatens track takes.",
+          "Players or collectors with multiple instruments preferring adjustments at their location.",
+          "Last-minute pre-gig emergencies or studio setup checks.",
+          "Logistical difficulty transporting multiple delicate instruments across town."
+        ]
+      },
+      "workIncluded": {
+        "es": [
+          "Desplazamiento con banco de trabajo portátil y kit técnico completo a Córdoba capital y cercanías.",
+          "Calibración y ajuste fino en el entorno real del músico (temperatura y amplificación propia).",
+          "Ajustes de acción, quintado, cambio de cuerdas y solución de ruidos rápidos.",
+          "Evaluación previa: los trabajos complejos (fresados, encolados estructurales o nivelados) se canalizan al taller."
+        ],
+        "en": [
+          "Travel with mobile workstation and professional precision kit within Córdoba and immediate surrounds.",
+          "Setup and fine calibration directly against the player’s own backline and amp rig.",
+          "Action adjustments, intonation, restringing and quick noise troubleshooting.",
+          "Prior feasibility assessment: heavy structural gluing or machine fretwork are strictly conducted in workshop."
+        ]
+      }
+    },
+    {
+      "id": "b2b-shops",
+      "order": 9,
+      "category": "b2b",
+      "name": {
+        "es": "Servicios para tiendas de música y profesionales",
+        "en": "Services for music shops and working professionals"
+      },
+      "shortDesc": {
+        "es": "Apoyo técnico externo, puesta a punto de stock de exposición y convenios de reparación para profesionales.",
+        "en": "External technical support, showroom inventory setups and collaborative repair services for music businesses."
+      },
+      "problems": {
+        "es": [
+          "Tiendas de música con acumulación de instrumentos de clientes sin técnico interno.",
+          "Guitarras en exposición desajustadas por cambios de estación que dificultan su venta.",
+          "Profesionales de gira que requieren atención prioritaria y mantenimiento programado.",
+          "Garantías y revisiones de instrumentos nuevos previo a la entrega al cliente."
+        ],
+        "en": [
+          "Music stores with customer repair backlog lacking a full-time in-house guitar tech.",
+          "Showroom instruments drifting out of calibration due to HVAC fluctuations, hampering sales.",
+          "Touring musicians needing priority turnarounds and pre-tour bench checks.",
+          "Pre-delivery inspection (PDI) and custom setup for newly purchased instruments."
+        ]
+      },
+      "workIncluded": {
+        "es": [
+          "Convenios periódicos de ajuste y revisión de stock de instrumentos en tienda.",
+          "Servicio de canalización de reparaciones especializadas de clientes de tiendas colaboradoras.",
+          "Soporte técnico para backline y eventos musicales en la provincia de Córdoba.",
+          "Atención preferente para músicos profesionales y docentes de conservatorio/escuelas."
+        ],
+        "en": [
+          "Scheduled bench rounds for showroom stock setups and inspection.",
+          "Turnkey technical partnership for client repairs on behalf of local music shops.",
+          "Backline technical support and setup checks for Córdoba musical events.",
+          "Priority turnaround scheduling for working musicians, gigging bands and academy teachers."
+        ]
+      }
+    }
+  ],
+  "coverage": {
+    "title": {
+      "es": "Área de servicio y modalidad de trabajo",
+      "en": "Service area and working modalities"
+    },
+    "workshopDescription": {
+      "es": "El servicio principal se realiza en taller en Córdoba (Andalucía). El cliente entrega el instrumento en cita coordinada y lo recoge una vez finalizada y testeada la intervención. No se realizan envíos nacionales ni internacionales.",
+      "en": "The core service is conducted at the workshop in Córdoba (Andalusia). Clients drop off their instruments by scheduled appointment and pick them up once work is complete and tested. We do not handle national or international shipping."
+    },
+    "onsiteDescription": {
+      "es": "Para trabajos adecuados (calibraciones, revisiones previas a grabación o lotes de varios instrumentos), se ofrece servicio técnico desplazado en Córdoba capital y localidades limítrofes, previa evaluación de viabilidad del trabajo requerido.",
+      "en": "For suitable tasks (calibrations, pre-recording bench checks or multiple instruments), on-site service is available in Córdoba city and nearby municipalities, following a preliminary feasibility check of the required work."
+    },
+    "areasList": {
+      "es": [
+        "Córdoba capital (todos los distritos)",
+        "Polígonos industriales y estudios de grabación de la zona",
+        "Locales de ensayo de Córdoba y área metropolitana",
+        "Municipios cercanos previa consulta (ej. Almodóvar, Posadas, Fernán Núñez, La Carlota)"
+      ],
+      "en": [
+        "Córdoba city (all districts and historical quarters)",
+        "Local recording studios and industrial music facilities",
+        "Córdoba rehearsal spaces and artist collectives",
+        "Nearby towns upon prior inquiry (e.g., Almodóvar, Posadas, Fernán Núñez, La Carlota)"
+      ]
+    }
+  },
+  "seo": {
+    "es": {
+      "title": "Guitar Tech Córdoba | Calibración, Ajuste y Reparación de Guitarras",
+      "description": "Técnico especialista en guitarras y bajos en Córdoba. Calibración milimétrica, electrónica, nivelado de trastes y mantenimiento. Presupuestos personalizados por WhatsApp.",
+      "keywords": "guitar tech cordoba, luthier cordoba, calibracion guitarra cordoba, ajuste guitarra cordoba, reparacion bajo cordoba, nivelado trastes cordoba"
+    },
+    "en": {
+      "title": "Guitar Tech Córdoba | Professional Guitar & Bass Technical Services",
+      "description": "Specialist guitar and bass technician in Córdoba, Spain. Precision setups, electronics, fret leveling, and repairs. Personalized quotes via WhatsApp.",
+      "keywords": "guitar tech cordoba spain, guitar repair cordoba, guitar setup cordoba, luthier cordoba andalusia, bass setup cordoba"
+    }
+  },
+  "lastUpdated": "2026-10-27T09:00:42.290Z",
+  "version": 2
+}

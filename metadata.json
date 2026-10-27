@@ -1,0 +1,6 @@
+{
+  "name": "Guitar Tech Córdoba | Technical Guitar Services",
+  "description": "Professional guitar technician services in Córdoba, Spain. Setup, electronics, fret leveling, repairs and maintenance for guitars and basses.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
