@@ -9,3 +9,4 @@ coverage/
 
 # Admin session tokens (runtime state, never commit)
 data/.tokens.json
+.vercel
