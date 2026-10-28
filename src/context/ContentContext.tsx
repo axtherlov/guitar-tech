@@ -6,7 +6,6 @@ interface ContentContextType {
   content: SiteContent;
   language: Language;
   currentPath: string;
-  isDefaultPassword: boolean;
   setLanguage: (lang: Language) => void;
   navigate: (path: string) => void;
   getWhatsAppUrl: (messageOverride?: string) => string;
@@ -37,7 +36,6 @@ export class SessionExpiredError extends Error {
 
 export const ContentProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [content, setContent] = useState<SiteContent>(DEFAULT_CONTENT);
-  const [isDefaultPassword, setIsDefaultPassword] = useState<boolean>(true);
   const [language, setLanguageState] = useState<Language>('es');
   const [currentPath, setCurrentPath] = useState<string>('/es');
   const [showConfigModal, setShowConfigModal] = useState<boolean>(false);
@@ -76,9 +74,6 @@ export const ContentProvider: React.FC<{ children: ReactNode }> = ({ children })
       .then(data => {
         if (data && data.content) {
           setContent(data.content);
-        }
-        if (typeof data.isDefaultPassword === 'boolean') {
-          setIsDefaultPassword(data.isDefaultPassword);
         }
       })
       .catch(err => {
@@ -208,7 +203,6 @@ export const ContentProvider: React.FC<{ children: ReactNode }> = ({ children })
         content,
         language,
         currentPath,
-        isDefaultPassword,
         setLanguage,
         navigate,
         getWhatsAppUrl,

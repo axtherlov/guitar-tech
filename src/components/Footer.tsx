@@ -1,6 +1,6 @@
 import React from 'react';
 import { useContent } from '../context/ContentContext.tsx';
-import { Shield, Lock } from 'lucide-react';
+import { Shield } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   const { content, language, navigate } = useContent();
@@ -81,15 +81,6 @@ export const Footer: React.FC = () => {
                 <Shield className="w-3.5 h-3.5 text-zinc-500" />
                 <span>RGPD / LOPDGDD</span>
               </div>
-              <a
-                href="/admin"
-                onClick={(e) => handleNav('/admin', e)}
-                className="flex items-center gap-1 text-zinc-400 hover:text-zinc-200 transition-colors"
-                title="Acceso Administración"
-              >
-                <Lock className="w-3 h-3" />
-                <span>Admin</span>
-              </a>
             </div>
           </div>
         </div>
