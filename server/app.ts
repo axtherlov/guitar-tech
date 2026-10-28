@@ -11,6 +11,9 @@ const DATA_DIR = path.resolve(__dirname, '..', 'data');
 
 // Fallback password is only honoured in development when ADMIN_PASSWORD is unset.
 const DEV_FALLBACK_PASSWORD = 'guitartech2026';
+// Admin login needs both a username and a password. ADMIN_USER sets the username;
+// when it is not defined the username is "admin" so existing deployments keep working.
+const DEFAULT_ADMIN_USER = 'admin';
 const BACKUP_FILENAME = /^backup-[\w-]+\.json$/;
 // Public origin used by sitemap.xml and robots.txt when APP_URL is not set.
 const DEFAULT_APP_URL = 'https://cuervoguitartech.com';
@@ -48,16 +51,23 @@ export function createApp(store: Store = createStore(DATA_DIR)) {
   const app = express();
 
   const envAdminPassword = process.env.ADMIN_PASSWORD;
-  const isDefaultPassword = !envAdminPassword;
+  const envAdminUser = process.env.ADMIN_USER || DEFAULT_ADMIN_USER;
 
-  if (isDefaultPassword && isProd()) {
+  if (!envAdminPassword && isProd()) {
     console.warn('[security] ADMIN_PASSWORD is not set: admin login is disabled in production.');
   }
 
-  const verifyAdminPassword = (password: string): boolean => {
-    if (!password) return false;
-    if (envAdminPassword) return password === envAdminPassword;
-    return !isProd() && password === DEV_FALLBACK_PASSWORD;
+  // Hash both sides so the comparison is constant-time regardless of the input length
+  const sha256 = (value: string) => crypto.createHash('sha256').update(value).digest();
+  const safeEqual = (a: string, b: string) => crypto.timingSafeEqual(sha256(a), sha256(b));
+
+  const verifyAdminCredentials = (username: string, password: string): boolean => {
+    const expectedPassword = envAdminPassword || (!isProd() ? DEV_FALLBACK_PASSWORD : null);
+    if (expectedPassword === null) return false; // login disabled without ADMIN_PASSWORD in production
+    // Evaluate both checks so the response does not reveal which one was wrong
+    const userOk = safeEqual(username, envAdminUser);
+    const passwordOk = safeEqual(password, expectedPassword);
+    return userOk && passwordOk;
   };
 
   const loadContent = async (): Promise<SiteContent> => {
@@ -96,19 +106,22 @@ export function createApp(store: Store = createStore(DATA_DIR)) {
 
   // 1. Get Site Content
   app.get('/api/content', route(async (_req, res) => {
-    res.json({ content: await loadContent(), isDefaultPassword });
+    res.json({ content: await loadContent() });
   }));
 
   // 2. Admin Login
   app.post('/api/auth/login', route(async (req, res) => {
-    const { password } = req.body || {};
-    if (!password || typeof password !== 'string' || !verifyAdminPassword(password)) {
-      res.status(401).json({ error: 'Contraseña incorrecta / Invalid password' });
+    const { username, password } = req.body || {};
+    const validInput =
+      typeof username === 'string' && typeof password === 'string' && username.trim() !== '' && password !== '';
+    if (!validInput || !verifyAdminCredentials(username.trim(), password)) {
+      // Same message whichever field was wrong
+      res.status(401).json({ error: 'Usuario o contraseña incorrectos / Invalid username or password' });
       return;
     }
     const token = `adm_${crypto.randomBytes(32).toString('hex')}`;
     await store.addToken(token);
-    res.json({ token, isDefaultPassword });
+    res.json({ token });
   }));
 
   // 3. Admin Logout

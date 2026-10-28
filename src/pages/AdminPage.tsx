@@ -19,9 +19,10 @@ import {
 } from 'lucide-react';
 
 export const AdminPage: React.FC = () => {
-  const { content, updateContent, isDefaultPassword, language } = useContent();
+  const { content, updateContent, language } = useContent();
 
   const [token, setToken] = useState<string | null>(null);
+  const [usernameInput, setUsernameInput] = useState('');
   const [passwordInput, setPasswordInput] = useState('');
   const [loginError, setLoginError] = useState<string | null>(null);
   const [activeTab, setActiveTab] = useState<'general' | 'services' | 'content' | 'seo' | 'backups' | 'checklist'>('general');
@@ -52,15 +53,21 @@ export const AdminPage: React.FC = () => {
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoginError(null);
+
+    if (!usernameInput.trim() || !passwordInput) {
+      setLoginError('Introduce tu usuario y tu contraseña.');
+      return;
+    }
+
     try {
       const res = await fetch('/api/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ password: passwordInput })
+        body: JSON.stringify({ username: usernameInput.trim(), password: passwordInput })
       });
       if (!res.ok) {
         const err = await res.json();
-        throw new Error(err.error || 'Contraseña incorrecta');
+        throw new Error(err.error || 'Usuario o contraseña incorrectos');
       }
       const data = await res.json();
       setToken(data.token);
@@ -210,25 +217,37 @@ export const AdminPage: React.FC = () => {
             </p>
           </div>
 
-          {isDefaultPassword && (
-            <div className="p-3.5 bg-zinc-950 border border-amber-500/30 rounded-lg text-xs text-amber-300/90 leading-relaxed">
-              <strong className="block text-amber-200 mb-1">Contraseña de administrador sin configurar:</strong>
-              Define <code className="text-zinc-100 font-mono">ADMIN_PASSWORD</code> en el archivo <code className="text-zinc-100 font-mono">.env</code> (o en las variables de entorno del hosting). En producción el acceso queda deshabilitado hasta que lo hagas.
-            </div>
-          )}
-
-          <form onSubmit={handleLogin} className="space-y-4">
+          <form onSubmit={handleLogin} noValidate className="space-y-4">
             <div>
-              <label className="block text-xs font-semibold text-zinc-300 mb-1.5">
-                Contraseña de acceso
+              <label htmlFor="admin-user" className="block text-xs font-semibold text-zinc-300 mb-1.5">
+                Usuario
               </label>
               <input
+                id="admin-user"
+                type="text"
+                value={usernameInput}
+                onChange={(e) => setUsernameInput(e.target.value)}
+                placeholder="Introduce tu usuario..."
+                className="w-full px-3.5 py-2.5 bg-zinc-950 border border-zinc-700 rounded-lg text-sm text-zinc-100 focus:outline-none focus:border-amber-400"
+                autoComplete="username"
+                autoCapitalize="none"
+                spellCheck={false}
+                autoFocus
+              />
+            </div>
+
+            <div>
+              <label htmlFor="admin-password" className="block text-xs font-semibold text-zinc-300 mb-1.5">
+                Contraseña
+              </label>
+              <input
+                id="admin-password"
                 type="password"
                 value={passwordInput}
                 onChange={(e) => setPasswordInput(e.target.value)}
                 placeholder="Introduce tu contraseña..."
                 className="w-full px-3.5 py-2.5 bg-zinc-950 border border-zinc-700 rounded-lg text-sm text-zinc-100 focus:outline-none focus:border-amber-400"
-                autoFocus
+                autoComplete="current-password"
               />
             </div>
 
@@ -786,7 +805,7 @@ export const AdminPage: React.FC = () => {
                 <span className="w-4 h-4 rounded-full border border-amber-400/60 flex items-center justify-center shrink-0 mt-0.5 text-[10px] text-amber-400 font-bold">2</span>
                 <div>
                   <strong className="text-zinc-100 block">Contraseña de Administrador Segura:</strong>
-                  Configurar la variable de entorno <code className="font-mono text-amber-300">ADMIN_PASSWORD</code> en el archivo <code className="font-mono text-zinc-200">.env</code> para sustituir la clave de desarrollo por defecto.
+                  Configurar las variables de entorno <code className="font-mono text-amber-300">ADMIN_USER</code> y <code className="font-mono text-amber-300">ADMIN_PASSWORD</code> (en <code className="font-mono text-zinc-200">.env</code> y en el hosting) para sustituir las credenciales de desarrollo por defecto.
                 </div>
               </li>
 

@@ -101,7 +101,8 @@ npm start
 
 Configurables en `.env` (guía en `.env.example`):
 
-- `ADMIN_PASSWORD`: Contraseña para el panel administrativo `/admin`. **Obligatoria en producción**: si no está definida, el acceso queda deshabilitado. En desarrollo (sin `NODE_ENV=production`) y sin esta variable, se acepta una clave de desarrollo local.
+- `ADMIN_USER`: Usuario para el panel administrativo `/admin`. Si no se define, el usuario es `admin`. Se recomienda definir uno propio.
+- `ADMIN_PASSWORD`: Contraseña para el panel administrativo `/admin`. **Obligatoria en producción**: si no está definida, el acceso queda deshabilitado. En desarrollo (sin `NODE_ENV=production`) y sin esta variable, se aceptan las credenciales de desarrollo local (usuario `admin`).
 - `APP_URL`: Dominio público del sitio web (ej. `https://cuervoguitartech.com`, que es el valor por defecto si no se define) utilizado en `sitemap.xml`, `robots.txt` y canonical tags.
 - `PORT`: Puerto de escucha del servidor (por defecto `3000`).
 - `UPSTASH_REDIS_REST_URL` / `UPSTASH_REDIS_REST_TOKEN`: Credenciales de Upstash Redis. Si existen, el contenido, las copias de seguridad y las sesiones de admin se guardan en Redis; si no, se usan archivos en `/data` (solo desarrollo local). También se aceptan los nombres `KV_REST_API_URL` / `KV_REST_API_TOKEN` que inyecta Vercel.
@@ -110,7 +111,7 @@ Configurables en `.env` (guía en `.env.example`):
 
 1. Importar el repositorio en Vercel (`vercel.json` ya fija el preset Vite y el directorio `dist`).
 2. En **Storage / Marketplace**, añadir **Upstash Redis** al proyecto: Vercel inyecta las credenciales automáticamente.
-3. En **Settings → Environment Variables**, definir `ADMIN_PASSWORD` (contraseña larga y única) y `APP_URL` (dominio público final).
+3. En **Settings → Environment Variables**, definir `ADMIN_USER`, `ADMIN_PASSWORD` (contraseña larga y única) y `APP_URL` (dominio público final).
 4. Desplegar. La API corre como función serverless en `api/index.ts` (`/api/*`, `/sitemap.xml`, `/robots.txt`); el frontend se sirve como estático.
 
 Sin `ADMIN_PASSWORD` el acceso a `/admin` queda deshabilitado en producción. El contenido se inicializa con los valores por defecto la primera vez que se consulta.
@@ -120,8 +121,8 @@ Sin `ADMIN_PASSWORD` el acceso a `/admin` queda deshabilitado en producción. El
 ## 6. Panel de Administración (`/admin`)
 
 Para acceder:
-1. Navega a `/admin` o pulsa el enlace discreto "Admin" en el pie de página.
-2. Introduce la contraseña definida en `ADMIN_PASSWORD`.
+1. Navega directamente a `/admin` (no hay enlace visible en el sitio).
+2. Introduce el usuario definido en `ADMIN_USER` y la contraseña definida en `ADMIN_PASSWORD`. Se validan ambos; si alguno es incorrecto, el mensaje de error es el mismo.
 3. Desde el panel puedes:
    - **General & WhatsApp:** Actualizar el número de WhatsApp oficial, mensaje inicial predeterminado y área de cobertura.
    - **Los 9 Servicios:** Modificar títulos, descripciones, síntomas atendidos y trabajos técnicos tanto en español como en inglés.
@@ -135,7 +136,7 @@ Para acceder:
 
 Antes de vincular el dominio definitivo:
 - [ ] Introducir el número verificado de WhatsApp en la pestaña "General" del panel `/admin`.
-- [ ] Cambiar la contraseña `ADMIN_PASSWORD` en el archivo de entorno `.env`.
+- [ ] Definir `ADMIN_USER` y cambiar `ADMIN_PASSWORD` en el archivo de entorno `.env` y en las variables del hosting.
 - [ ] Revisar y completar los datos fiscales del titular en la página de **Política de Privacidad**.
 - [ ] Comprobar el dominio en `APP_URL` para que el archivo `sitemap.xml` refleje la URL pública final.
 - [ ] Dar de alta el perfil de empresa local en Google Business Profile seleccionando Córdoba y comarca como área de servicio.
