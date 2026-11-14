@@ -6,6 +6,14 @@ const QUOTE_PRICE = {
   en: 'Ask for a quote'
 };
 
+/**
+ * Bump this number whenever the services in this file must overwrite what is stored in
+ * production (Redis). On the next request the server compares it with the stored
+ * `servicesSeed`; if the stored one is lower, services are replaced by these defaults
+ * (the previous content is backed up first). Admin edits made afterwards are kept.
+ */
+export const SERVICES_SEED_VERSION = 1;
+
 export const DEFAULT_CONTENT: SiteContent = {
   brandName: 'Kuervo Guitar Tech',
   whatsappNumber: '+34600000000',
@@ -553,5 +561,6 @@ export const DEFAULT_CONTENT: SiteContent = {
     }
   },
   lastUpdated: new Date().toISOString(),
-  version: 1
+  version: 1,
+  servicesSeed: SERVICES_SEED_VERSION
 };
