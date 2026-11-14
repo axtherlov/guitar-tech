@@ -28,6 +28,23 @@ function migrateContent(content: SiteContent): SiteContent {
     : content;
 }
 
+// Stored content predates the per-service price fields: fill them from the defaults, but only
+// when the field was never set, so a price cleared from the admin panel stays empty.
+function withDefaultPrices(content: SiteContent): SiteContent {
+  const defaults = new Map(DEFAULT_CONTENT.services.map(s => [s.id, s]));
+  return {
+    ...content,
+    services: content.services.map(s => {
+      const d = defaults.get(s.id);
+      return {
+        ...s,
+        price: s.price === undefined ? d?.price : s.price,
+        hidePriceNote: s.hidePriceNote === undefined ? d?.hidePriceNote : s.hidePriceNote,
+      };
+    }),
+  };
+}
+
 type Handler = (req: Request, res: Response) => Promise<void>;
 
 // Express 4 does not catch rejected promises from async handlers.
@@ -64,7 +81,7 @@ export function createApp(store: Store = createStore(DATA_DIR)) {
     try {
       const stored = await store.getContent();
       // Merge with defaults in case new fields were added
-      if (stored) return migrateContent({ ...DEFAULT_CONTENT, ...stored });
+      if (stored) return withDefaultPrices(migrateContent({ ...DEFAULT_CONTENT, ...stored }));
     } catch (err) {
       console.error('Error reading content, falling back to defaults:', err);
       return DEFAULT_CONTENT;

@@ -1,5 +1,5 @@
 {
-  "brandName": "Cuervo Guitar Tech",
+  "brandName": "Kuervo Guitar Tech",
   "whatsappNumber": "+34600000000",
   "isWhatsappConfigured": false,
   "defaultIntroMessage": {
@@ -144,41 +144,61 @@
       "order": 1,
       "category": "setup",
       "name": {
-        "es": "Ajuste y calibración completa",
-        "en": "Complete setup and calibration"
+        "es": "Ajuste y calibración (setup)",
+        "en": "Setup and calibration"
       },
       "shortDesc": {
-        "es": "Ajuste integral de alma, acción milimétrica, quintado e intonación armónica y alturas de pastilla.",
-        "en": "Comprehensive truss rod, string action, strobe intonation and pickup height adjustment for optimal playability."
+        "es": "Dejamos tu guitarra cómoda de tocar y afinada en todo el mástil: ajustamos el mástil, la altura de las cuerdas, la intonación y las pastillas, y la limpiamos a fondo.",
+        "en": "We make your guitar comfortable to play and in tune all along the neck: we adjust the neck, string height, intonation and pickups, and give it a deep clean."
       },
       "problems": {
         "es": [
-          "Cuerdas excesivamente duras o demasiado altas sobre los trastes.",
-          "Trasteos molestos en primeros trastes o en registros agudos.",
-          "El instrumento desafina al tocar acordes a lo largo del mástil.",
-          "Pérdida de sustain o volumen desigual entre pastillas."
+          "Las cuerdas están duras o muy altas y te cuesta apretarlas.",
+          "Las cuerdas suenan \"rasposas\" en los primeros trastes o en las notas agudas.",
+          "Afinas bien al aire, pero desafina al tocar acordes más arriba en el mástil.",
+          "Las notas se apagan muy rápido o una pastilla suena más fuerte que otra.",
+          "Tus cuerdas están viejas, apagadas u oxidadas y toca cambiarlas.",
+          "Tu guitarra lleva mucho tiempo guardada, o tiene el diapasón reseco o sucio y los herrajes con óxido."
         ],
         "en": [
-          "Excessively stiff action or strings sitting too far off the fretboard.",
-          "Annoying fret buzz in lower positions or high register choking.",
-          "Instrument goes out of tune when playing chords up the neck.",
-          "Uneven volume balance between pickups or loss of acoustic sustain."
+          "Strings feel stiff or sit too high and are hard to press.",
+          "Strings sound buzzy on the first frets or on high notes.",
+          "You tune fine open, but chords higher up the neck sound out of tune.",
+          "Notes die out very fast or one pickup sounds louder than another.",
+          "Your strings are old, dull or rusty and it is time to change them.",
+          "Your guitar has been in storage for a long time, or has a dry or dirty fretboard and rusty hardware."
         ]
       },
       "workIncluded": {
         "es": [
-          "Inspección y ajuste de curvatura del mástil mediante el alma (truss rod).",
-          "Calibración de la altura de cuerdas en puente y cejuela (acción milimétrica).",
-          "Ajuste del quintado/entonación armónica con afinador estroboscópico.",
-          "Calibración de la altura y balance de salida de pastillas.",
-          "Revisión y apriete de tornillería, clavijeros y jack."
+          "Revisamos el mástil y lo ajustamos con el alma (truss rod) para que tenga la curvatura justa.",
+          "Subimos o bajamos las cuerdas en el puente y en la cejuela hasta que se toque cómodo y no suenen rasposas.",
+          "Ajustamos la entonación para que afine bien, tanto con las cuerdas al aire como pisadas.",
+          "Regulamos la altura de las pastillas para que suenen parejas entre sí.",
+          "Revisamos y apretamos tornillos, clavijas y la entrada del cable (jack).",
+          "Limpiamos a fondo el diapasón y los trastes, sin productos abrasivos.",
+          "Hidratamos la madera del diapasón con aceites adecuados para cada tipo de madera.",
+          "Limpiamos y lubricamos las piezas que se mueven (clavijas y puente) y los contactos del volumen, el tono y el selector."
         ],
         "en": [
-          "Truss rod inspection and precise relief adjustment.",
-          "String action calibration at both nut slots and bridge saddles.",
-          "Harmonic intonation tuning using high-accuracy strobe equipment.",
-          "Pickup height balancing for even frequency response.",
-          "Hardware tightening: tuners, strap buttons, bridge screws and output jack."
+          "We check the neck and adjust it with the truss rod so it has just the right curve.",
+          "We raise or lower the strings at the bridge and nut until it plays comfortably with no buzz.",
+          "We adjust the intonation so it stays in tune, both on open strings and when fretted.",
+          "We adjust pickup height so they sound even with each other.",
+          "We check and tighten screws, tuners and the cable input (jack).",
+          "We deep-clean the fretboard and frets, with no abrasive products.",
+          "We hydrate the fretboard wood with oils suited to each type of wood.",
+          "We clean and lubricate the moving parts (tuners and bridge) and the contacts of the volume, tone and selector."
+        ]
+      },
+      "notIncluded": {
+        "es": [
+          "Las cuerdas no están incluidas en el precio: puedes traerlas tú o las ponemos nosotros con un costo extra.",
+          "No incluye el nivelado de trastes: es otro servicio."
+        ],
+        "en": [
+          "Strings are not included in the price: bring your own, or we can supply them for an extra cost.",
+          "Fret leveling is not included: it is a separate service."
         ]
       },
       "image": "/images/hero_guitar_workbench_1793042582513.jpg",
@@ -188,45 +208,139 @@
       }
     },
     {
-      "id": "electronics",
+      "id": "fret-leveling",
       "order": 2,
-      "category": "electronics",
+      "category": "frets",
       "name": {
-        "es": "Electrónica y sustitución de pastillas",
-        "en": "Electronics and pickup replacement"
+        "es": "Nivelado y pulido de trastes",
+        "en": "Fret leveling and polishing"
       },
       "shortDesc": {
-        "es": "Instalación de pastillas, cambio de potenciómetros, conmutadores, apantallado y diagnóstico de ruidos.",
-        "en": "Pickup installation, potentiometer & switch replacement, shielding and electrical fault diagnosis."
+        "es": "Dejamos todos los trastes a la misma altura y bien pulidos, para que puedas bajar las cuerdas sin que suenen rasposas ni se ahoguen las notas, lo que permite una acción ultrabaja sin zumbidos.",
+        "en": "We bring all the frets to the same height and polish them well, so you can lower the strings without buzzing or choked notes, which allows ultra-low action with no buzz."
       },
       "problems": {
         "es": [
-          "Ruidos parásitos, chasquidos al mover potenciómetros o el selector.",
-          "Zumbido persistente (hum) que no cesa al soltar las cuerdas.",
-          "Cortes de señal intermitentes o jack flojo que falla.",
-          "Deseo de cambiar el tono instalando pastillas de mayor calidad."
+          "Notas surcos o marcas de desgaste en los trastes, sobre todo bajo las cuerdas finas.",
+          "Algunas notas suenan rasposas o se ahogan y no puedes bajar la altura de las cuerdas.",
+          "Al hacer bendings o vibrato sientes los trastes ásperos o la cuerda chirría.",
+          "Sientes los bordes de los trastes afilados al pasar la mano por el mástil."
         ],
         "en": [
-          "Crackling noises when turning tone/volume pots or switching pickups.",
-          "Persistent ground hum or interference when hands leave the bridge/strings.",
-          "Intermittent signal dropouts, loose or noisy output jack.",
-          "Desire to upgrade tone with premium aftermarket pickups."
+          "You notice grooves or wear marks on the frets, especially under the thin strings.",
+          "Some notes sound rough or choke out and you cannot lower the string height.",
+          "When bending or using vibrato, the frets feel rough or the string squeaks.",
+          "You feel sharp fret ends when you slide your hand along the neck."
         ]
       },
       "workIncluded": {
         "es": [
-          "Instalación y conexionado de pastillas pasivas y activas.",
-          "Sustitución de potenciómetros (CTS/Alpha), conmutadores (CRL/Oak) y jacks Switchcraft.",
-          "Cableado vintage con hilo forrado de tela o apantallamiento de alta fidelidad.",
-          "Apantallado de cavidades con lámina de cobre para eliminación de ruidos.",
-          "Diagnóstico con multímetro y corrección de bucles de masa."
+          "Revisamos la curvatura del mástil con una regla de precisión antes de empezar.",
+          "Rectificado y nivelado de precisión de la corona de todos los trastes.",
+          "Recoronado manual con limas diamantadas para devolver la cumbre cilíndrica exacta.",
+          "Pulimos los trastes poco a poco hasta dejarlos lisos y brillantes como un espejo.",
+          "Suavizamos los bordes de los trastes para que no se noten al pasar la mano por el mástil."
         ],
         "en": [
-          "Installation and wiring of passive and active pickup sets.",
-          "Replacement of pots (CTS/Alpha), selector switches (CRL/Oak) and heavy-duty jacks.",
-          "Vintage cloth push-back wiring or modern coaxial shielded harness assembly.",
-          "Cavity copper shielding to eliminate RF interference and 50Hz hum.",
-          "Multimeter continuity testing and ground loop rectification."
+          "We check the neck curvature with a precision straightedge before we start.",
+          "Precision leveling along the entire fret run with ground leveling beam.",
+          "Hand recrowning with specialized diamond files to restore the narrow crown apex.",
+          "We polish the frets step by step until they are smooth and mirror-bright.",
+          "We smooth the fret ends so you do not feel them when your hand slides along the neck."
+        ]
+      },
+      "image": "/images/fretwork_precision_luthier_1793042582589.jpg",
+      "imageAlt": {
+        "es": "Nivelado, coronado y pulido de trastes con abrasivos micro-mesh en diapasón",
+        "en": "Fret leveling, recrowning and micro-mesh polishing on rosewood fretboard"
+      }
+    },
+    {
+      "id": "refretting",
+      "order": 3,
+      "category": "frets",
+      "name": {
+        "es": "Retrasteado completo o parcial",
+        "en": "Complete or partial refretting"
+      },
+      "shortDesc": {
+        "es": "Cambiamos los trastes gastados por unos nuevos, de níquel (los de toda la vida) o de acero inoxidable, que duran muchísimo más.",
+        "en": "We replace worn frets with new ones, in nickel (the classic choice) or stainless steel, which lasts much longer."
+      },
+      "problems": {
+        "es": [
+          "Los trastes están tan gastados que ya no se pueden nivelar más.",
+          "Hay trastes sueltos o levantados.",
+          "Preferencia por cambiar a un perfil diferente (Medium Jumbo, Jumbo, Vintage).",
+          "Deseo de actualizar a trastes de acero inoxidable para evitar desgaste futuro."
+        ],
+        "en": [
+          "Your frets are so worn they cannot be leveled any more.",
+          "You have loose or lifted frets.",
+          "Desire to change to a different fret size (Medium Jumbo, Jumbo, Narrow Tall).",
+          "Seeking an upgrade to stainless steel frets for lifetime smooth bending and zero wear."
+        ]
+      },
+      "workIncluded": {
+        "es": [
+          "Quitamos los trastes viejos con calor controlado, para no dañar ni astillar el diapasón.",
+          "Corregimos y preparamos la curvatura del diapasón (ébano, palisandro o arce).",
+          "Limpiamos las ranuras de los trastes y las dejamos todas a la misma profundidad.",
+          "Instalamos los trastes nuevos a presión, de níquel o de acero inoxidable.",
+          "Nivelado final, coronado, pulido y calibración completa del instrumento."
+        ],
+        "en": [
+          "We remove the old frets with controlled heat, so we do not damage or chip the fretboard.",
+          "We correct and prepare the fretboard curvature (ebony, rosewood or maple).",
+          "We clean the fret slots and make them all the same depth.",
+          "We press in the new frets, in nickel or stainless steel.",
+          "Subsequent leveling, precision crowning, high polish and full setup."
+        ]
+      },
+      "image": "/images/service_refretting_workshop_1793091765400.jpg",
+      "imageAlt": {
+        "es": "Inserción y prensado de hilo de traste nuevo en diapasón de guitarra",
+        "en": "Pressing new fret wire into guitar fretboard using brass radiused luthier press"
+      }
+    },
+    {
+      "id": "electronics",
+      "order": 4,
+      "category": "electronics",
+      "name": {
+        "es": "Electrónica y cambio de pastillas",
+        "en": "Electronics and pickup changes"
+      },
+      "shortDesc": {
+        "es": "Instalamos pastillas, arreglamos los controles de volumen y tono y eliminamos ruidos y zumbidos.",
+        "en": "We install pickups, fix your volume and tone controls, and get rid of noise and hum."
+      },
+      "problems": {
+        "es": [
+          "Oyes chasquidos o ruidos al mover el volumen, el tono o el selector.",
+          "Se oye un zumbido constante que baja cuando tocas las cuerdas o el puente.",
+          "El sonido se corta o falla al mover el cable, o el jack está flojo.",
+          "Quieres cambiar el sonido de tu guitarra con pastillas mejores."
+        ],
+        "en": [
+          "You hear crackling or noise when you move the volume, the tone or the selector.",
+          "There is a constant hum that gets quieter when you touch the strings or the bridge.",
+          "The sound cuts out or fails when you move the cable, or the jack is loose.",
+          "You want to change your guitar's sound with better pickups."
+        ]
+      },
+      "workIncluded": {
+        "es": [
+          "Instalamos y conectamos pastillas nuevas, pasivas o activas.",
+          "Cambiamos los controles de volumen y tono, el selector de pastillas y el jack por piezas premium de alta calidad o de marcas de calidad estándar del mercado.",
+          "Cableado y apantallamiento de alta fidelidad.",
+          "Forramos con cobre el hueco de los controles para eliminar ruidos y zumbidos."
+        ],
+        "en": [
+          "We install and wire new pickups, passive or active.",
+          "We replace the volume and tone controls, the pickup selector and the jack with premium, high-quality parts or standard-quality brands from the market.",
+          "High-fidelity wiring and shielding.",
+          "We line the control cavity with copper to get rid of noise and hum."
         ]
       },
       "image": "/images/guitar_electronics_soldering_1793042584609.jpg",
@@ -236,8 +350,54 @@
       }
     },
     {
+      "id": "modifications",
+      "order": 5,
+      "category": "modifications",
+      "name": {
+        "es": "Modificaciones y mejoras (upgrades)",
+        "en": "Modifications and hardware upgrades"
+      },
+      "shortDesc": {
+        "es": "Mejoramos tu guitarra con mejores piezas: clavijas de bloqueo, puentes, cejuelas de hueso hechas a medida y cambios en el circuito para tener más sonidos.",
+        "en": "We upgrade your guitar with better parts: locking tuners, bridges, custom-fit bone nuts and circuit changes for more tones."
+      },
+      "problems": {
+        "es": [
+          "La guitarra se desafina al hacer bendings o al usar la palanca de trémolo.",
+          "La cejuela de plástico está gastada o hace que las cuerdas se atasquen.",
+          "El puente original está oxidado o no se adapta bien al mástil.",
+          "Necesidad de opciones tímbricas como coil-split, serie/paralelo o treble bleed."
+        ],
+        "en": [
+          "Your guitar goes out of tune when you bend strings or use the tremolo arm.",
+          "The plastic nut is worn or makes the strings stick.",
+          "The original bridge is rusty or does not fit the neck well.",
+          "Seeking expanded tonal options like coil-splitting, phase inversion or treble bleed."
+        ]
+      },
+      "workIncluded": {
+        "es": [
+          "Tallamos a mano una cejuela de hueso natural o sintético, a la medida de tu guitarra y tus cuerdas.",
+          "Instalación de clavijeros de bloqueo (Gotoh, Schaller, Grover).",
+          "Cambiamos el puente por otro mejor: fijo, tipo Strat o trémolo flotante.",
+          "Instalamos circuitos nuevos para conseguir más sonidos: treble bleed, potenciómetros push-pull o blend."
+        ],
+        "en": [
+          "We hand-carve a natural or synthetic bone nut, fitted to your guitar and your strings.",
+          "Installation of precision locking tuners (Gotoh, Schaller, Grover).",
+          "We replace the bridge with a better one: fixed, Strat-style or floating tremolo.",
+          "We install new circuits to get more tones: treble bleed, push-pull pots or blend."
+        ]
+      },
+      "image": "/images/service_modifications_hardware_1793091764589.jpg",
+      "imageAlt": {
+        "es": "Instalación de puente de latón y clavijeros de bloqueo en guitarra eléctrica",
+        "en": "Installing precision brass bridge and locking tuners on electric guitar"
+      }
+    },
+    {
       "id": "repairs",
-      "order": 3,
+      "order": 6,
       "category": "repairs",
       "name": {
         "es": "Reparaciones mecánicas y estructurales",
@@ -284,198 +444,8 @@
       }
     },
     {
-      "id": "modifications",
-      "order": 4,
-      "category": "modifications",
-      "name": {
-        "es": "Modificaciones y mejoras (Upgrades)",
-        "en": "Modifications and hardware upgrades"
-      },
-      "shortDesc": {
-        "es": "Mejora de clavijeros de bloqueo, puentes de alta gama, cejuelas de hueso talladas y modificaciones de circuito.",
-        "en": "Upgrades to locking tuners, precision bridges, custom bone nuts and circuit tone mods."
-      },
-      "problems": {
-        "es": [
-          "Inestabilidad recurrente de afinación al tocar o usar trémolo.",
-          "Cejuela de plástico defectuosa, desgastada o que ahoga las cuerdas.",
-          "Puente original con piezas oxidadas o radios no acordes al mástil.",
-          "Necesidad de opciones tímbricas como coil-split, serie/paralelo o treble bleed."
-        ],
-        "en": [
-          "Recurring tuning drift when bending strings or using the vibrato arm.",
-          "Factory plastic nut binding the strings or deadening open string resonance.",
-          "Worn, oxidized bridge saddles or mismatch with fingerboard radius.",
-          "Seeking expanded tonal options like coil-splitting, phase inversion or treble bleed."
-        ]
-      },
-      "workIncluded": {
-        "es": [
-          "Talla artesanal de cejuela de hueso natural o Tusq a la medida de tu instrumento.",
-          "Instalación de clavijeros de bloqueo (Gotoh, Schaller, Grover).",
-          "Sustitución e instalación de puentes fijos, tipo Strat o trémolos flotantes.",
-          "Instalación de circuitos Treble Bleed, push-pull o blend pots."
-        ],
-        "en": [
-          "Hand-carved natural unbleached bone or Graph Tech Tusq nut tailored to your string gauge.",
-          "Installation of precision locking tuners (Gotoh, Schaller, Grover).",
-          "Bridge and saddle upgrades for fixed bridges, vintage tremolos or Floyd Rose.",
-          "Wiring custom circuits: Treble Bleeds, coil splits via push-pull pots or blend circuits."
-        ]
-      },
-      "image": "/images/service_modifications_hardware_1793091764589.jpg",
-      "imageAlt": {
-        "es": "Instalación de puente de latón y clavijeros de bloqueo en guitarra eléctrica",
-        "en": "Installing precision brass bridge and locking tuners on electric guitar"
-      }
-    },
-    {
-      "id": "fret-leveling",
-      "order": 5,
-      "category": "frets",
-      "name": {
-        "es": "Nivelado, coronado y pulido de trastes",
-        "en": "Fret leveling, recrowning and mirror polishing"
-      },
-      "shortDesc": {
-        "es": "Eliminación milimétrica de marcas de desgaste y nivelación perfecta para permitir una acción ultrabaja sin zumbidos.",
-        "en": "Millimeter leveling of fret wear and crowning for ultra-low action with zero choking."
-      },
-      "problems": {
-        "es": [
-          "Muescas o surcos en trastes debajo de las cuerdas finas.",
-          "Zumbidos localizados en trastes específicos que impiden bajar la acción.",
-          "Sensación áspera o chirrido al realizar bendings o vibratos.",
-          "Bordes de trastes cortantes por retracción estacional de la madera."
-        ],
-        "en": [
-          "Pits, indentations or flat spots under the unwound high strings.",
-          "Specific notes choking out or buzzing during string bends.",
-          "Rough, gritty sensation when bending strings against frets.",
-          "Sharp fret ends protruding along the fretboard edge due to seasonal wood shrinkage."
-        ]
-      },
-      "workIncluded": {
-        "es": [
-          "Verificación del relieve con regla entallada bajo tensión simulada.",
-          "Rectificado y nivelado de precisión de la corona de todos los trastes.",
-          "Recoronado manual con limas diamantadas para devolver la cumbre cilíndrica exacta.",
-          "Lizado y pulido progresivo con micro-mesh hasta acabado espejo.",
-          "Biselado y suavizado de los extremos de trastes (fret sprout)."
-        ],
-        "en": [
-          "Neck relief verification under simulated string tension.",
-          "Precision leveling along the entire fret run with ground leveling beam.",
-          "Hand recrowning with specialized diamond files to restore the narrow crown apex.",
-          "Progressive sanding and micro-mesh buffing up to mirror shine.",
-          "Fret end dressing and deburring for silky smooth thumb transitions."
-        ]
-      },
-      "image": "/images/fretwork_precision_luthier_1793042582589.jpg",
-      "imageAlt": {
-        "es": "Nivelado, coronado y pulido de trastes con abrasivos micro-mesh en diapasón",
-        "en": "Fret leveling, recrowning and micro-mesh polishing on rosewood fretboard"
-      }
-    },
-    {
-      "id": "refretting",
-      "order": 6,
-      "category": "frets",
-      "name": {
-        "es": "Retrasteado completo o parcial",
-        "en": "Complete or partial refretting"
-      },
-      "shortDesc": {
-        "es": "Sustitución de trastes gastados por alpaca alemana tradicional o acero inoxidable de máxima durabilidad.",
-        "en": "Replacement of worn frets with premium nickel-silver or lifetime-grade stainless steel wire."
-      },
-      "problems": {
-        "es": [
-          "Trastes con desgaste severo que no admiten un nuevo nivelado.",
-          "Trastes levantados o sueltos en el diapasón.",
-          "Preferencia por cambiar a un perfil diferente (Medium Jumbo, Jumbo, Vintage).",
-          "Deseo de actualizar a trastes de acero inoxidable para evitar desgaste futuro."
-        ],
-        "en": [
-          "Frets worn down too low to safely tolerate another level and crown.",
-          "Loose or unseated frets rocking in their fret slots.",
-          "Desire to change to a different fret size (Medium Jumbo, Jumbo, Narrow Tall).",
-          "Seeking an upgrade to stainless steel frets for lifetime smooth bending and zero wear."
-        ]
-      },
-      "workIncluded": {
-        "es": [
-          "Extracción térmica controlada de trastes sin desportillar el diapasón.",
-          "Rectificado y acondicionamiento del radio del diapasón (ébano, palisandro o arce).",
-          "Limpieza y profundizado de ranuras de traste.",
-          "Instalación por presión de trastes nuevos (alpaca o acero inoxidable).",
-          "Nivelado final, coronado, pulido y calibración completa del instrumento."
-        ],
-        "en": [
-          "Controlled heat extraction of old frets preventing fretboard chip-out.",
-          "Trueing and conditioning of fretboard radius (rosewood, ebony, or maple).",
-          "Fret slot cleaning and depth uniformization.",
-          "Precision radiused pressing of new fret wire (nickel-silver or stainless steel).",
-          "Subsequent leveling, precision crowning, high polish and full setup."
-        ]
-      },
-      "image": "/images/service_refretting_workshop_1793091765400.jpg",
-      "imageAlt": {
-        "es": "Inserción y prensado de hilo de traste nuevo en diapasón de guitarra",
-        "en": "Pressing new fret wire into guitar fretboard using brass radiused luthier press"
-      }
-    },
-    {
-      "id": "maintenance",
-      "order": 7,
-      "category": "maintenance",
-      "name": {
-        "es": "Mantenimiento preventivo y limpieza profunda",
-        "en": "Preventive maintenance and deep detailing"
-      },
-      "shortDesc": {
-        "es": "Tratamiento e hidratación de maderas descubiertas, pulido de barnices, desoxidación de herrajes y revisión.",
-        "en": "Raw wood conditioning, finish buffing, hardware deoxidation and electrical contact rejuvenation."
-      },
-      "problems": {
-        "es": [
-          "Diapasón reseco, blanquecino o con acumulación de suciedad y sudor.",
-          "Herrajes metálicos con corrosión inicial o polvo acumulado.",
-          "Cuerpo apagado o con marcas de roce y sudor seco.",
-          "Instrumento que ha pasado mucho tiempo guardado en funda o estuche."
-        ],
-        "en": [
-          "Dry, pale fretboard with dried sweat, skin oils and grime buildup.",
-          "Metal hardware developing surface oxidation or accumulated dust.",
-          "Body finish dulled by stage sweat, grease and fingerprints.",
-          "Instrument taken out of storage needing inspection before rehearsals or gigs."
-        ]
-      },
-      "workIncluded": {
-        "es": [
-          "Limpieza profunda no abrasiva del diapasón y trastes.",
-          "Hidratación con aceites botánicos adecuados según la especie de madera.",
-          "Limpieza y lubricación de partes móviles (selletas, engranajes de afinadores).",
-          "Limpiacontactos dieléctrico en potenciómetros y conmutadores.",
-          "Pulido fino y abrillantado del cuerpo y pala."
-        ],
-        "en": [
-          "Non-abrasive deep sanitation of fretboard and frets.",
-          "Hydration with organic wood oils formulated for unfinished tone woods.",
-          "Cleaning and mechanical lubrication of tuners, saddle pivots and tremolo knives.",
-          "Electrical contact cleaner treatment for switches and pots.",
-          "High-luster wax polish and hand buffing of body and headstock."
-        ]
-      },
-      "image": "/images/service_maintenance_cleaning_1793091766041.jpg",
-      "imageAlt": {
-        "es": "Limpieza profunda e hidratación botánica de diapasón con paño de microfibra",
-        "en": "Deep cleaning and organic oil conditioning of fretboard with microfiber cloth"
-      }
-    },
-    {
       "id": "onsite",
-      "order": 8,
+      "order": 7,
       "category": "onsite",
       "name": {
         "es": "Servicio técnico a domicilio y local de ensayo",
@@ -518,52 +488,6 @@
         "es": "Puesto de trabajo técnico portátil en estudio de grabación musical",
         "en": "Portable mobile guitar tech workstation case in recording studio"
       }
-    },
-    {
-      "id": "b2b-shops",
-      "order": 9,
-      "category": "b2b",
-      "name": {
-        "es": "Servicios para tiendas de música y profesionales",
-        "en": "Services for music shops and working professionals"
-      },
-      "shortDesc": {
-        "es": "Apoyo técnico externo, puesta a punto de stock de exposición y convenios de reparación para profesionales.",
-        "en": "External technical support, showroom inventory setups and collaborative repair services for music businesses."
-      },
-      "problems": {
-        "es": [
-          "Tiendas de música con acumulación de instrumentos de clientes sin técnico interno.",
-          "Guitarras en exposición desajustadas por cambios de estación que dificultan su venta.",
-          "Profesionales de gira que requieren atención prioritaria y mantenimiento programado.",
-          "Garantías y revisiones de instrumentos nuevos previo a la entrega al cliente."
-        ],
-        "en": [
-          "Music stores with customer repair backlog lacking a full-time in-house guitar tech.",
-          "Showroom instruments drifting out of calibration due to HVAC fluctuations, hampering sales.",
-          "Touring musicians needing priority turnarounds and pre-tour bench checks.",
-          "Pre-delivery inspection (PDI) and custom setup for newly purchased instruments."
-        ]
-      },
-      "workIncluded": {
-        "es": [
-          "Convenios periódicos de ajuste y revisión de stock de instrumentos en tienda.",
-          "Servicio de canalización de reparaciones especializadas de clientes de tiendas colaboradoras.",
-          "Soporte técnico para backline y eventos musicales en la provincia de Córdoba.",
-          "Atención preferente para músicos profesionales y docentes de conservatorio/escuelas."
-        ],
-        "en": [
-          "Scheduled bench rounds for showroom stock setups and inspection.",
-          "Turnkey technical partnership for client repairs on behalf of local music shops.",
-          "Backline technical support and setup checks for Córdoba musical events.",
-          "Priority turnaround scheduling for working musicians, gigging bands and academy teachers."
-        ]
-      },
-      "image": "/images/service_professional_shop_b2b_1793091766755.jpg",
-      "imageAlt": {
-        "es": "Soporte y revisión técnica para guitarras y bajos en rack de exposición y taller",
-        "en": "Technical support and multi-stand guitar inspection for music shops and pros"
-      }
     }
   ],
   "coverage": {
@@ -596,12 +520,12 @@
   },
   "seo": {
     "es": {
-      "title": "Cuervo Guitar Tech | Calibración, Ajuste y Reparación de Guitarras",
+      "title": "Kuervo Guitar Tech | Calibración, Ajuste y Reparación de Guitarras",
       "description": "Técnico especialista en guitarras y bajos en Córdoba. Calibración milimétrica, electrónica, reparaciones y nivelado de trastes. Presupuestos personalizados por WhatsApp.",
       "keywords": "guitar tech cordoba, luthier cordoba, calibracion guitarra cordoba, ajuste guitarra cordoba, reparacion bajo cordoba, nivelado trastes cordoba"
     },
     "en": {
-      "title": "Cuervo Guitar Tech | Professional Guitar & Bass Technical Services",
+      "title": "Kuervo Guitar Tech | Professional Guitar & Bass Technical Services",
       "description": "Specialist guitar and bass technician in Córdoba, Spain. Precision setups, electronics, structural repairs, and fret leveling. Personalized quotes via WhatsApp.",
       "keywords": "guitar tech cordoba spain, guitar repair cordoba, guitar setup cordoba, luthier cordoba andalusia, bass setup cordoba"
     }

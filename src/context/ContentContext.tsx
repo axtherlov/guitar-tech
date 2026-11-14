@@ -75,7 +75,8 @@ export const ContentProvider: React.FC<{ children: ReactNode }> = ({ children })
       .then(res => res.json())
       .then(data => {
         if (data && data.content) {
-          setContent(data.content);
+          // Fill fields the server may not know yet (e.g. a server older than the frontend)
+          setContent({ ...DEFAULT_CONTENT, ...data.content });
         }
         if (typeof data.isDefaultPassword === 'boolean') {
           setIsDefaultPassword(data.isDefaultPassword);
@@ -192,7 +193,7 @@ export const ContentProvider: React.FC<{ children: ReactNode }> = ({ children })
       }
       const data = await res.json();
       if (data.content) {
-        setContent(data.content);
+        setContent({ ...DEFAULT_CONTENT, ...data.content });
       }
       return true;
     } catch (err) {

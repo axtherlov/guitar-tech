@@ -206,7 +206,7 @@ export const AdminPage: React.FC = () => {
               Panel de Administración
             </h1>
             <p className="text-xs text-zinc-400">
-              Acceso seguro para el técnico de Cuervo Guitar Tech
+              Acceso seguro para el técnico de Kuervo Guitar Tech
             </p>
           </div>
 
@@ -316,7 +316,7 @@ export const AdminPage: React.FC = () => {
       <div className="flex items-center gap-1 border-b border-zinc-800 overflow-x-auto pb-1 text-xs font-medium">
         {[
           { id: 'general', label: 'General & WhatsApp', icon: Settings },
-          { id: 'services', label: 'Los 9 Servicios', icon: Briefcase },
+          { id: 'services', label: 'Los Servicios', icon: Briefcase },
           { id: 'content', label: 'Textos & Sobre mí', icon: FileText },
           { id: 'seo', label: 'SEO & Metadatos', icon: Search },
           { id: 'backups', label: 'Copias de Seguridad', icon: History },
@@ -452,11 +452,11 @@ export const AdminPage: React.FC = () => {
         </div>
       )}
 
-      {/* TAB 2: THE 9 SERVICES */}
+      {/* TAB 2: SERVICES */}
       {activeTab === 'services' && (
         <div className="space-y-6">
           <p className="text-xs text-zinc-400">
-            Edita los nombres, descripciones cortas, problemas resueltos y trabajos técnicos incluidos para cada uno de los 9 servicios.
+            Edita los nombres, descripciones cortas, problemas resueltos y trabajos técnicos incluidos para cada servicio.
           </p>
 
           <div className="space-y-6">
@@ -521,6 +521,35 @@ export const AdminPage: React.FC = () => {
                         const s = { ...service, shortDesc: { ...service.shortDesc, en: e.target.value } };
                         updateService(index, s);
                       }}
+                      className="w-full px-3 py-2 bg-zinc-950 border border-zinc-800 rounded-lg text-xs text-zinc-100"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-xs font-semibold text-zinc-300 mb-1">Precio (ES) — una opción por línea</label>
+                    <textarea
+                      rows={2}
+                      value={service.price?.es ?? ''}
+                      onChange={(e) => {
+                        const s = { ...service, price: { en: '', ...service.price, es: e.target.value } };
+                        updateService(index, s);
+                      }}
+                      placeholder="30 €"
+                      className="w-full px-3 py-2 bg-zinc-950 border border-zinc-800 rounded-lg text-xs text-zinc-100"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-semibold text-zinc-300 mb-1">Price (EN) — one option per line</label>
+                    <textarea
+                      rows={2}
+                      value={service.price?.en ?? ''}
+                      onChange={(e) => {
+                        const s = { ...service, price: { es: '', ...service.price, en: e.target.value } };
+                        updateService(index, s);
+                      }}
+                      placeholder="€30"
                       className="w-full px-3 py-2 bg-zinc-950 border border-zinc-800 rounded-lg text-xs text-zinc-100"
                     />
                   </div>
