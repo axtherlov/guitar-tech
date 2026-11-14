@@ -65,7 +65,7 @@ Sitio web profesional, bilingüe (ES | EN), orientado a producción y optimizado
 2. **Electrónica y sustitución de pastillas** (Instalación de pastillas, potenciómetros CTS, jacks, apantallado en cobre, eliminación de ruidos).
 3. **Modificaciones y mejoras (Upgrades)** (Cejuelas de hueso talladas a mano, clavijeros de bloqueo, puentes de precisión, modificaciones de circuito).
 4. **Nivelado, coronado y pulido de trastes** (Rectificado de precisión, lima diamantada de coronado y pulido espejo hasta 12.000 grit).
-5. **Retrasteado completo o parcial** (Extracción térmica sin astillado, instalación por prensa en alpaca o acero inoxidable).
+5. **Retrasteado completo o parcial** (Extracción térmica sin astillado, instalación por prensa en níquel o acero inoxidable).
 6. **Reparaciones mecánicas y estructurales** (Fracturas de pala, despegue de puentes acústicos, encolados con resinas de luthería y refuerzos).
 7. **Mantenimiento preventivo y limpieza profunda** (Hidratación de diapasones con aceites botánicos, pulido de herrajes y abrillantado).
 8. **Servicio técnico a domicilio y local de ensayo** (Asistencia desplazada en Córdoba para ensayos, grabaciones o colecciones de instrumentos).

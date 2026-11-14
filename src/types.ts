@@ -7,6 +7,12 @@ export interface ServiceItem {
   shortDesc: Record<Language, string>;
   problems: Record<Language, string[]>;
   workIncluded: Record<Language, string[]>;
+  /** Things the service does NOT cover; shown with a red ✗ after the included work. */
+  notIncluded?: Record<Language, string[]>;
+  /** Price shown in the card's top-right corner. One option per line, e.g. "Básico desde 30 €\nCompleto desde 50 €". */
+  price?: Record<Language, string>;
+  /** Hides the "prices are subject to prior inspection" note under this service's price. */
+  hidePriceNote?: boolean;
   image?: string;
   imageAlt?: Record<Language, string>;
   category: 'setup' | 'electronics' | 'modifications' | 'frets' | 'repairs' | 'maintenance' | 'onsite' | 'b2b';

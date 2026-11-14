@@ -1,49 +1,41 @@
 import React from 'react';
 import { useContent } from '../context/ContentContext.tsx';
-import { Check, AlertCircle, ShieldAlert } from 'lucide-react';
+import { Check, AlertCircle } from 'lucide-react';
 
 export const ServicesPage: React.FC = () => {
   const { content, language } = useContent();
 
-  // Sort services according to their designated order property (commercial priority: 1 to 9)
+  // Sort services according to their designated order property (display order: 1 first)
   const sortedServices = [...content.services].sort((a, b) => (a.order || 0) - (b.order || 0));
+
+  // Small note shown under every price
+  const priceNote = language === 'es'
+    ? 'Los precios están sujetos a inspección previa.'
+    : 'Prices are subject to prior inspection.';
 
   return (
     <div className="space-y-16">
       
       {/* Header */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-end">
+      <div className="max-w-3xl">
         <div>
           <div className="text-xs font-semibold text-amber-400 uppercase tracking-widest mb-2">
             {language === 'es' ? 'Catálogo Comercial y Técnico' : 'Commercial & Technical Catalog'}
           </div>
           <h1 className="text-3xl sm:text-4xl font-extrabold text-silver tracking-tight mb-4">
             {language === 'es'
-              ? 'Servicios técnicos para guitarra y bajo'
-              : 'Technical services for guitar and bass'}
+              ? 'Servicios para tu guitarra o bajo'
+              : 'Services for your guitar or bass'}
           </h1>
           <p className="text-sm sm:text-base text-zinc-400 leading-relaxed">
             {language === 'es'
-              ? 'Cada instrumento que llega a mi banco de trabajo recibe una evaluación técnica exhaustiva. A continuación encontrarás las 9 especialidades ordenadas por prioridad comercial, los problemas habituales que resuelven y el trabajo técnico implicado.'
-              : 'Every instrument that arrives at my bench undergoes a thorough technical evaluation. Below you will find all 9 specialties arranged by commercial priority, the common symptoms they address, and the precise benchwork involved.'}
-          </p>
-        </div>
-
-        {/* Pricing notice - anti-hallucination requirement */}
-        <div className="flex items-start gap-3 p-4 bg-zinc-900/80 border border-zinc-800 rounded-xl text-xs text-zinc-300">
-          <ShieldAlert className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
-          <p className="leading-relaxed">
-            <strong className="text-zinc-100">
-              {language === 'es' ? 'Presupuestos personalizados:' : 'Personalized quotes:'}
-            </strong>{' '}
-            {language === 'es'
-              ? 'El estado del mástil, el desgaste de componentes y los calibres de cuerda varían en cada guitarra. No publicamos tarifas genéricas ni precios cerrados arbitrarios; diagnosticamos el instrumento e informamos del presupuesto exacto antes de empezar.'
-              : 'Neck stability, fret wear and hardware specs differ from instrument to instrument. We do not publish generic flat rates or arbitrary estimates; we inspect the instrument and provide a customized quote before performing any work.'}
+              ? 'Cada instrumento que llega a mi banco de trabajo recibe una evaluación técnica exhaustiva. Aquí abajo tienes lo que hacemos, en qué casos te conviene cada servicio y en qué consiste el trabajo.'
+              : 'Every instrument that arrives at my bench undergoes a thorough technical evaluation. Below you will find what we do, when each service makes sense for you, and what the work involves.'}
           </p>
         </div>
       </div>
 
-      {/* 9 Services List (Requirement 2: Top 3 services receive strongest visual prominence) */}
+      {/* Services list (Requirement 2: Top 3 services receive strongest visual prominence) */}
       <div className="space-y-12">
         {sortedServices.map((service, index) => {
           // First 3 services receive marquee prominence
@@ -59,18 +51,32 @@ export const ServicesPage: React.FC = () => {
                   : 'bg-zinc-900/50 border-zinc-800/80 glow'
               }`}
             >
+              {/* Title on the left, price in the top-right corner (one line per option) */}
+              <div className="flex items-start justify-between gap-4 mb-6">
+                <h2 className="text-xl sm:text-2xl font-bold text-zinc-100 group-hover:text-amber-300 transition-colors">
+                  {service.name[language]}
+                </h2>
+                {service.price?.[language] && (
+                  <div className="shrink-0 w-max min-w-[10rem] px-4 py-3 rounded-xl border border-amber-500/40 bg-amber-500/10 text-center">
+                    <div className="whitespace-pre-line text-xs font-semibold text-amber-300 leading-snug">
+                      {service.price[language]}
+                    </div>
+                    {!service.hidePriceNote && (
+                      <div className="mt-1.5 w-0 min-w-full text-[11px] leading-snug text-amber-200/60">
+                        {priceNote}
+                      </div>
+                    )}
+                  </div>
+                )}
+              </div>
+
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                
+
                 {/* Left: Info, Problems, Work Included */}
                 <div className="lg:col-span-7 space-y-6">
-                  <div>
-                    <h2 className="text-xl sm:text-2xl font-bold text-zinc-100 group-hover:text-amber-300 transition-colors mb-2">
-                      {service.name[language]}
-                    </h2>
-                    <p className="text-sm text-zinc-300 leading-relaxed">
-                      {service.shortDesc[language]}
-                    </p>
-                  </div>
+                  <p className="text-sm text-zinc-300 leading-relaxed">
+                    {service.shortDesc[language]}
+                  </p>
 
                   {/* Two columns for problems & work */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-5 pt-1">
@@ -86,6 +92,12 @@ export const ServicesPage: React.FC = () => {
                           <li key={wIdx} className="flex items-start gap-2">
                             <span className="text-emerald-500 font-bold leading-none mt-1">✓</span>
                             <span className="leading-relaxed">{work}</span>
+                          </li>
+                        ))}
+                        {service.notIncluded?.[language]?.map((item, nIdx) => (
+                          <li key={`not-${nIdx}`} className="flex items-start gap-2">
+                            <span className="text-red-500 font-bold leading-none mt-1">✗</span>
+                            <span className="leading-relaxed">{item}</span>
                           </li>
                         ))}
                       </ul>
