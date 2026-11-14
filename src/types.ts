@@ -62,6 +62,8 @@ export interface SiteContent {
   }>;
   lastUpdated: string;
   version: number;
+  /** Version of the default services this content was last seeded from (see SERVICES_SEED_VERSION). */
+  servicesSeed?: number;
 }
 
 export interface BackupItem {

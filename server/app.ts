@@ -2,7 +2,7 @@ import crypto from 'crypto';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import express, { Request, Response, NextFunction } from 'express';
-import { DEFAULT_CONTENT } from '../src/data/defaultContent.js';
+import { DEFAULT_CONTENT, SERVICES_SEED_VERSION } from '../src/data/defaultContent.js';
 import type { SiteContent } from '../src/types.js';
 import { createStore, type Store } from './store.js';
 
@@ -91,7 +91,26 @@ export function createApp(store: Store = createStore(DATA_DIR)) {
     try {
       const stored = await store.getContent();
       // Merge with defaults in case new fields were added
-      if (stored) return withDefaultPrices(migrateContent({ ...DEFAULT_CONTENT, ...stored }));
+      if (stored) {
+        const merged = withDefaultPrices(migrateContent({ ...DEFAULT_CONTENT, ...stored }));
+        if ((stored.servicesSeed ?? 0) >= SERVICES_SEED_VERSION) return merged;
+        // The code ships newer default services than the ones stored: overwrite them,
+        // keeping a backup of what was there.
+        const reseeded: SiteContent = {
+          ...merged,
+          services: DEFAULT_CONTENT.services,
+          servicesSeed: SERVICES_SEED_VERSION,
+          lastUpdated: new Date().toISOString(),
+          version: (stored.version || 1) + 1,
+        };
+        try {
+          await store.createBackup(stored);
+          await store.setContent(reseeded);
+        } catch (err) {
+          console.error('Could not persist reseeded services:', err);
+        }
+        return reseeded;
+      }
     } catch (err) {
       console.error('Error reading content, falling back to defaults:', err);
       return DEFAULT_CONTENT;
